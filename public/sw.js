@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bauntungpos-cache-v10';
+const CACHE_NAME = 'bauntungpos-cache-v11';
 const ASSETS = [
   '/login',
   '/pos',

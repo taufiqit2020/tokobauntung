@@ -482,11 +482,11 @@
                     <!-- QRIS PAYMENT SECTION (Hidden initially) -->
                     <div id="payment-qris-view" class="space-y-4 hidden flex-col items-center text-center">
                         <div class="p-2 bg-white border border-slate-200 rounded-2xl shadow-sm inline-block">
-                            <img src="/images/qris-bauntung.jpg" alt="QRIS Toko Sembako Plastik Bauntung" class="w-48 h-auto rounded-lg">
+                            <img id="qris-image-placeholder" src="/images/qris-bauntung.jpg" alt="QRIS Toko Sembako Plastik Bauntung" class="w-48 h-auto rounded-lg">
                         </div>
                         <div>
-                            <p class="font-bold text-slate-800 text-sm">QRIS STATIS BAUNTUNG</p>
-                            <p class="text-xs text-slate-500 mt-1 max-w-[280px]">Silakan arahkan pembeli untuk men-scan QR di atas. Pastikan dana sudah masuk ke mutasi sebelum menyelesaikan transaksi.</p>
+                            <p class="font-bold text-slate-800 text-sm">QRIS DINAMIS BAUNTUNG</p>
+                            <p class="text-xs text-slate-500 mt-1 max-w-[280px]">Silakan arahkan pembeli untuk men-scan QR di atas. Nominal harga akan otomatis terdeteksi.</p>
                         </div>
                     </div>
                     
@@ -937,6 +937,9 @@
 
             // Trigger change calculation
             calculateChange();
+            
+            // Generate dynamic QRIS with exact amount
+            updateQRISImage(total);
             
             modal.style.display = 'flex';
             
@@ -1432,6 +1435,52 @@
         function rightAlignedLabelValue(label, value, width = 32) {
             const spaces = width - label.length - value.toString().length;
             return label + ' '.repeat(spaces > 0 ? spaces : 1) + value;
+        }
+
+        // QRIS Dynamic Generator Utilities
+        const STATIC_QRIS_PAYLOAD = "00020101021126590013ID.CO.BNI.WWW011893600009150464484302096095449940303UMI51440014ID.CO.QRIS.WWW0215ID10265223592840303UMI5204541153033605802ID5925TOKO SEMBAKO PLASTIK BAUN6010BANJARBARU61057071462070703A01630488E2";
+
+        function crc16(str) {
+            let crc = 0xFFFF;
+            for (let c = 0; c < str.length; c++) {
+                let code = str.charCodeAt(c);
+                crc ^= (code << 8);
+                for (let i = 0; i < 8; i++) {
+                    if (crc & 0x8000) {
+                        crc = ((crc << 1) ^ 0x1021) & 0xFFFF;
+                    } else {
+                        crc = (crc << 1) & 0xFFFF;
+                    }
+                }
+            }
+            return crc.toString(16).toUpperCase().padStart(4, '0');
+        }
+
+        function generateDynamicQRIS(staticQRIS, amount) {
+            let qrisWithoutCrc = staticQRIS.slice(0, -4);
+            qrisWithoutCrc = qrisWithoutCrc.replace('010211', '010212');
+            
+            const currencyTag = '5303360';
+            const amountStr = Math.round(amount).toString();
+            const amountTag = '54' + amountStr.length.toString().padStart(2, '0') + amountStr;
+            
+            if (qrisWithoutCrc.includes(currencyTag)) {
+                qrisWithoutCrc = qrisWithoutCrc.replace(currencyTag, currencyTag + amountTag);
+            } else {
+                qrisWithoutCrc += amountTag;
+            }
+            
+            return qrisWithoutCrc + crc16(qrisWithoutCrc);
+        }
+
+        function updateQRISImage(amount) {
+            try {
+                const dynamicPayload = generateDynamicQRIS(STATIC_QRIS_PAYLOAD, amount);
+                const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(dynamicPayload)}&size=200x200`;
+                document.getElementById('qris-image-placeholder').src = qrCodeUrl;
+            } catch (err) {
+                console.error("Error generating dynamic QRIS:", err);
+            }
         }
     </script>
     <!-- PWA Service Worker Registration -->
