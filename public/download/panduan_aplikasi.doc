@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>PANDUAN PENGGUNAAN APLIKASI BAUNTUNG POS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 40px;
+        }
+        h1 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 8px;
+            text-align: center;
+            font-size: 24pt;
+        }
+        h2 {
+            color: #2563eb;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 16pt;
+        }
+        h3 {
+            color: #1e293b;
+            margin-top: 20px;
+            font-size: 13pt;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10.5pt;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: #fef3c7;
+            border-left: 6px solid #d97706;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 9pt;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PANDUAN PENGGUNAAN APLIKASI BAUNTUNG POS</h1>
+    <p style="text-align: center; font-weight: bold; color: #475569;">Aplikasi Kasir & Inventaris Toko Plastik & Sembako Bauntung</p>
+    
+    <p>Aplikasi <strong>Bauntung POS</strong> adalah sistem kasir (<em>Point of Sale</em>) dan manajemen inventaris berbasis web yang dirancang khusus untuk operasional harian Toko Bauntung. Dokumen ini dibuat sebagai panduan operasional agar seluruh karyawan (Kasir, Kepala Keuangan, dan Admin IT) dapat menggunakan aplikasi dengan mudah, konsisten, dan meminimalkan kesalahan input.</p>
+
+    <h2>1. MANAJEMEN KASIR (POS) - Panduan untuk Kasir</h2>
+    <p><em>Digunakan oleh: Humairah & Jumiati</em></p>
+    <p>Halaman kasir adalah area utama untuk melayani transaksi pembelian pelanggan. Halaman ini dioptimalkan untuk perangkat tablet maupun handphone kasir.</p>
+
+    <h3>A. Membuka Shift (Mulai Bekerja)</h3>
+    <p>Setiap pertama kali masuk kerja, kasir wajib membuka shift baru:</p>
+    <ol>
+        <li>Login menggunakan akun kasir masing-masing.</li>
+        <li>Anda akan diarahkan ke halaman Kasir. Jika shift belum dibuka, sistem akan memunculkan modal <strong>Buka Shift Baru</strong>.</li>
+        <li>Masukkan <strong>Modal Awal Laci</strong> (uang tunai kembalian yang ada di laci kasir saat itu).</li>
+        <li>Klik <strong>Buka Shift</strong>. Sekarang kasir siap bertransaksi.</li>
+    </ol>
+
+    <h3>B. Proses Transaksi Penjualan</h3>
+    <p>Sistem mendukung pencarian barang cepat secara otomatis:</p>
+    <ul>
+        <li><strong>Memasukkan Produk ke Keranjang:</strong>
+            <ul>
+                <li><strong>Metode Scanner:</strong> Kasir dapat langsung menembakkan barcode scanner ke produk. Sistem akan otomatis memasukkan barang ke keranjang belanja di sebelah kanan.</li>
+                <li><strong>Metode Ketik/Cari:</strong> Cukup ketik kode barang (misal: <em>BTL 11</em>) atau nama produk (misal: <em>BOTOL</em>) pada kolom pencarian. Katalog akan langsung terfilter secara <em>real-time</em>. Tekan tombol produk untuk memasukkannya ke keranjang.</li>
+            </ul>
+        </li>
+        <li><strong>Penerapan Potongan Grosir Otomatis:</strong>
+            <ul>
+                <li>Jika kuantitas produk tertentu dalam keranjang mencapai batas minimum grosir (misalnya beli 10 botol), harga produk tersebut akan <strong>otomatis berubah ke Harga Grosir</strong> yang lebih murah.</li>
+                <li>Badge hijau bertuliskan <strong>"Grosir"</strong> akan muncul sebagai penanda visual.</li>
+            </ul>
+        </li>
+        <li><strong>Penyelarasan Manual Potongan:</strong>
+            <ul>
+                <li>Jika ingin memberikan diskon transaksi secara manual, klik tombol <strong>Potongan Grosir</strong> di bagian bawah keranjang belanja, masukkan nilai rupiah potongan, lalu simpan.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>C. Pembayaran & Cetak Struk</h3>
+    <p>Setelah keranjang belanja sesuai, tekan tombol <strong>Bayar (F9)</strong> untuk memunculkan modal pembayaran:</p>
+    <ul>
+        <li><strong>Metode Tunai (Cash):</strong>
+            <ul>
+                <li>Pilih <strong>Tunai</strong>.</li>
+                <li>Masukkan nominal uang yang diterima dari pembeli. Anda juga bisa menggunakan tombol cepat nominal pecahan uang yang tersedia di bawahnya.</li>
+                <li>Nilai uang kembalian akan langsung dihitung otomatis oleh sistem.</li>
+            </ul>
+        </li>
+        <li><strong>Metode QRIS Digital (Dinamis):</strong>
+            <ul>
+                <li>Pilih <strong>QRIS Digital</strong> (Hanya berfungsi saat kasir sedang online/terkoneksi internet).</li>
+                <li>Layar akan menampilkan <strong>QRIS Dinamis</strong> lengkap dengan nominal belanja yang terdeteksi otomatis.</li>
+                <li>Arahkan pembeli untuk men-scan QR tersebut menggunakan aplikasi m-banking atau e-wallet (GoPay, OVO, Dana, dll). Pembeli <strong>tidak perlu mengetik nominal harga lagi</strong> karena harganya otomatis pas.</li>
+                <li>Pastikan saldo mutasi atau verifikasi visual pembayaran berhasil, lalu selesaikan transaksi.</li>
+            </ul>
+        </li>
+        <li><strong>Penyelesaian & Cetak:</strong>
+            <ul>
+                <li>Klik <strong>Simpan & Cetak Transaksi</strong>.</li>
+                <li>Struk belanja akan tercetak otomatis lewat printer thermal kasir. Format struk telah dirapikan secara proporsional.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>D. Menutup Shift (Selesai Bekerja)</h3>
+    <p>Di akhir jam kerja, kasir wajib melakukan serah terima shift:</p>
+    <ol>
+        <li>Klik tombol <strong>Tutup Shift</strong> di pojok kanan atas layar kasir.</li>
+        <li>Masukkan <strong>Uang Laci Fisik Akhir</strong> (total uang tunai riil yang ada di laci kasir saat penutupan).</li>
+        <li>Klik <strong>Tutup Shift</strong>.</li>
+        <li>Sistem akan mencetak laporan rekap shift berisi total penjualan tunai, penjualan QRIS, selisih uang (jika ada), serta tanda tangan penanggung jawab.</li>
+    </ol>
+
+    <h2>2. ADMINISTRASI KEUANGAN - Panduan untuk Kepala Keuangan</h2>
+    <p><em>Digunakan oleh: Kepala Keuangan (Siti Kamariah, S.Pd.)</em></p>
+    <p>Halaman Keuangan digunakan untuk mengontrol inventaris barang, pengeluaran operasional toko, serta menganalisis laba rugi toko.</p>
+
+    <h3>A. Dashboard Finansial (Laba Rugi)</h3>
+    <p>Halaman utama memberikan ringkasan performa finansial toko:</p>
+    <ul>
+        <li><strong>Omset bersih, Harga Pokok Penjualan (COGS/Modal), Pengeluaran, Laba Kotor, dan Laba Bersih</strong> dihitung secara otomatis untuk hari ini dan bulan berjalan.</li>
+        <li>Menampilkan daftar <strong>Produk Terlaris</strong> serta <strong>Peringatan Stok Tipis</strong> untuk barang-barang yang stoknya sudah menyentuh batas minimum alarm.</li>
+    </ul>
+
+    <h3>B. Manajemen Produk & Inventaris Stok</h3>
+    <p>Bagian ini digunakan untuk mengelola katalog barang dagangan:</p>
+    <ol>
+        <li><strong>Tambah Produk Baru:</strong> Masukkan Kode Barang unik, Nama Produk, Kategori, Satuan, Harga Modal (beli), Harga Jual Eceran, Harga Grosir (opsional), Batas Minimum Grosir, Stok Awal Fisik, dan Stok Minimum Alarm.</li>
+        <li><strong>Ubah Data Produk & Stok Langsung:</strong>
+            <ul>
+                <li>Klik tombol edit (ikon pensil) pada produk yang diinginkan.</li>
+                <li>Anda dapat memperbarui data produk, termasuk mengubah <strong>JUMLAH STOK</strong> secara langsung.</li>
+                <li><em>Catatan:</em> Perubahan stok langsung lewat modal edit akan otomatis tercatat sebagai log penyesuaian di dalam laporan Stock Opname agar pembukuan tetap terlacak.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>C. Laporan Stock Opname (Penyesuaian Stok)</h3>
+    <p>Digunakan untuk mencocokkan stok fisik di gudang asli dengan stok yang tercatat di sistem:</p>
+    <ol>
+        <li>Masuk ke menu <strong>Stock Opname</strong>.</li>
+        <li>Pilih barang yang ingin disesuaikan.</li>
+        <li>Masukkan <strong>Stok Fisik Aktual</strong> hasil perhitungan manual Anda di gudang beserta <strong>Alasan Penyesuaian</strong>.</li>
+        <li>Simpan. Perbedaan stok (plus/minus) akan dicatat rapi dan stok sistem langsung diperbarui.</li>
+        <li>Anda dapat mengekspor laporan riwayat stock opname ini ke format <strong>Excel (.xls)</strong> dengan mengeklik tombol hijau <strong>Ekspor Excel</strong>.</li>
+    </ol>
+
+    <h3>D. Pencatatan Pengeluaran Toko</h3>
+    <p>Mencatat seluruh biaya pengeluaran operasional toko selain pembelian barang:</p>
+    <ol>
+        <li>Masuk ke menu <strong>Pengeluaran Toko</strong>.</li>
+        <li>Klik <strong>Tambah Pengeluaran</strong>.</li>
+        <li>Isi deskripsi pengeluaran, kategori pengeluaran, tanggal, dan jumlah nominalnya.</li>
+        <li>Data ini akan langsung memotong kalkulasi laba bersih pada dashboard utama.</li>
+        <li>Anda juga dapat mengekspor laporan pengeluaran operasional ini ke format <strong>Excel (.xls)</strong>.</li>
+    </ol>
+
+    <h3>E. Laporan Penjualan & Ekspor Excel Laporan</h3>
+    <p>Untuk memeriksa detail transaksi penjualan harian:</p>
+    <ol>
+        <li>Masuk ke menu <strong>Laporan Penjualan</strong>.</li>
+        <li>Gunakan filter pencarian berdasarkan Rentang Tanggal, Metode Pembayaran (Cash/QRIS), serta filter <strong>Multi-Kasir</strong> (memungkinkan mencentang beberapa kasir sekaligus).</li>
+        <li>Klik tombol <strong>Ekspor Excel</strong> untuk mengunduh laporan penjualan dalam format spreadsheet rapi dengan standar pemformatan angka ribuan desimal (misal: <em>500.000</em>).</li>
+        <li>Di bagian bawah laporan fisik maupun Excel, telah tercantum tanda tangan pengesahan resmi:
+            <ul>
+                <li><strong>Kepala Keuangan:</strong> Siti Kamariah, S.Pd.</li>
+                <li><strong>Mengetahui Direktur:</strong> Hj. Normaulida, S.H.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>3. ADMINISTRASI SISTEM - Panduan untuk Admin IT</h2>
+    <p><em>Digunakan oleh: Admin IT (Taufiqurrahhman, S.Kom)</em></p>
+    <p>Menu khusus untuk mengelola akun pengguna, konfigurasi dasar toko, serta keamanan data cadangan (backup/restore).</p>
+
+    <h3>A. Manajemen Pengguna (User Management)</h3>
+    <ol>
+        <li>Menambahkan karyawan baru dan menentukan perannya (<em>Role</em>) apakah sebagai <strong>Kasir (Admin Kasir)</strong>, <strong>Keuangan</strong>, atau <strong>Admin IT</strong>.</li>
+        <li>Mengubah data profil karyawan atau menonaktifkan akun karyawan yang sudah tidak bekerja lagi.</li>
+    </ol>
+
+    <h3>B. Pengaturan Toko (Settings)</h3>
+    <p>Mengubah konfigurasi teks struk belanja: Anda dapat mengubah nama toko, nomor telepon, alamat lengkap toko (yang otomatis tercetak di header struk), serta kustomisasi pesan penutup (<em>receipt footer</em>) tanpa tanda seru di bagian bawah struk.</p>
+
+    <h3>C. Backup & Restore Database Riil</h3>
+    <ul>
+        <li><strong>Backup Database:</strong> Klik tombol <strong>Download Backup Database</strong> pada dashboard IT. Sistem akan otomatis memicu perintah <code>mysqldump</code> untuk mengunduh file <code>.sql</code> berisi seluruh data saat ini ke komputer Anda.</li>
+        <li><strong>Restore Database:</strong> Pilih file cadangan <code>.sql</code> yang pernah Anda unduh sebelumnya lewat form <strong>Restore Database</strong>, lalu unggah. Sistem akan memulihkan seluruh data dalam sekejap.</li>
+    </ul>
+
+    <h2>4. DAFTAR AKUN PENGGUNA KARYAWAN</h2>
+    <p>Berikut adalah kredensial akun awal untuk login ke sistem Bauntung POS:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Peran (Role)</th>
+                <th>Nama Karyawan</th>
+                <th>Username</th>
+                <th>Password Default</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Admin IT</strong></td>
+                <td>Taufiqurrahhman, S.Kom</td>
+                <td>66657171</td>
+                <td>hari@hari1</td>
+            </tr>
+            <tr>
+                <td><strong>Keuangan</strong></td>
+                <td>Siti Kamariah, S.Pd.</td>
+                <td>66657172</td>
+                <td>hari@hari1</td>
+            </tr>
+            <tr>
+                <td><strong>Kasir 1</strong></td>
+                <td>Humairah</td>
+                <td>66657173</td>
+                <td>hari@hari1</td>
+            </tr>
+            <tr>
+                <td><strong>Kasir 2</strong></td>
+                <td>Jumiati</td>
+                <td>66657174</td>
+                <td>hari@hari1</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="important-box">
+        <strong>PENTING:</strong> Demi keamanan, harap instruksikan setiap karyawan untuk segera mengubah password mereka setelah pertama kali berhasil melakukan login pada menu profil pengguna.
+    </div>
+
+    <h2>5. TROUBLESHOOTING (Penanganan Masalah Umum)</h2>
+
+    <h3>A. Printer Kasir Tidak Mencetak Struk</h3>
+    <ul>
+        <li><strong>Penyebab:</strong> Koneksi Bluetooth mati atau aplikasi Bluetooth Print di HP/tablet kasir belum berjalan.</li>
+        <li><strong>Solusi:</strong>
+            <ol>
+                <li>Pastikan Bluetooth di HP/tablet kasir dalam kondisi AKTIF.</li>
+                <li>Pastikan printer thermal kasir sudah menyala dan terhubung (<em>paired</em>) ke HP/tablet.</li>
+                <li>Buka aplikasi <strong>Bluetooth Print</strong> terlebih dahulu, pastikan printer thermal terpilih sebagai printer utama.</li>
+                <li>Kembali ke aplikasi kasir dan klik <strong>Print Struk</strong>.</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h3>B. Pembayaran QRIS Tidak Muncul atau Eror 0</h3>
+    <ul>
+        <li><strong>Penyebab:</strong> HP/tablet kasir kehilangan koneksi internet atau server backend sedang offline.</li>
+        <li><strong>Solusi:</strong>
+            <ol>
+                <li>Pastikan HP/tablet terkoneksi dengan WiFi atau Paket Data Internet.</li>
+                <li>Jika koneksi internet mati total, sistem akan otomatis masuk ke <strong>Mode Offline</strong>. Pada mode ini, arahkan pembeli untuk membayar dengan <strong>Uang Tunai (Cash)</strong> demi keamanan pencatatan.</li>
+            </ol>
+        </li>
+    </ul>
+
+    <div class="footer">
+        &copy; 2026 Toko Sembako &amp; Plastik Bauntung. Dokumen Panduan Karyawan.
+    </div>
+
+</body>
+</html>
