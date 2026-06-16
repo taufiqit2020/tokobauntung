@@ -81,3 +81,13 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+
+// Rute Sementara untuk Force Update Stok ke 100
+Route::get('/force-update-stock', function () {
+    try {
+        \App\Models\Product::query()->update(['stock' => 100]);
+        return 'Sukses: Semua stok barang telah berhasil diubah menjadi 100!';
+    } catch (\Exception $e) {
+        return 'Eror: ' . $e->getMessage();
+    }
+});
