@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(850.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 85000.00,
             'wholesale_price' => max(77000.00, 85000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 67000.00,
             'wholesale_price' => max(60000.00, 67000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -154,7 +154,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 77000.00,
             'wholesale_price' => max(70000.00, 77000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -167,7 +167,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 46000.00,
             'wholesale_price' => max(40000.00, 46000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -180,7 +180,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 42000.00,
             'wholesale_price' => max(35000.00, 42000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -193,7 +193,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 21000.00,
             'wholesale_price' => max(18000.00, 21000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3000.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -219,7 +219,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(26000.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -232,7 +232,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(300.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -245,7 +245,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(13000.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -258,7 +258,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6500.00,
             'wholesale_price' => max(4000.00, 6500.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -271,7 +271,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1500.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -284,7 +284,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(9000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -297,7 +297,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(4500.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -310,7 +310,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(2900.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -323,7 +323,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(12500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -336,7 +336,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(13500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -349,7 +349,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8750.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -362,7 +362,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(9000.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -375,7 +375,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2900.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -388,7 +388,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(5000.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -401,7 +401,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 65000.00,
             'wholesale_price' => max(60000.00, 65000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -414,7 +414,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 450000.00,
             'wholesale_price' => max(410000.00, 450000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -427,7 +427,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1800.00,
             'wholesale_price' => max(1450.00, 1800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -440,7 +440,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 26000.00,
             'wholesale_price' => max(18500.00, 26000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -453,7 +453,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(35000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -466,7 +466,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(1250.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -479,7 +479,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1400.00,
             'wholesale_price' => max(1000.00, 1400.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -492,7 +492,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2800.00,
             'wholesale_price' => max(2200.00, 2800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -505,7 +505,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1800.00,
             'wholesale_price' => max(1450.00, 1800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -518,7 +518,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3000.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -531,7 +531,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1500.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -544,7 +544,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1400.00,
             'wholesale_price' => max(1100.00, 1400.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -557,7 +557,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(4600.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -570,7 +570,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(4650.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -583,7 +583,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6500.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -596,7 +596,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(4166.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -609,7 +609,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(11850.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -622,7 +622,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(13200.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -635,7 +635,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(2400.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -648,7 +648,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 90000.00,
             'wholesale_price' => max(74400.00, 90000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -661,7 +661,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2500.00,
             'wholesale_price' => max(1621.00, 2500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -674,7 +674,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1046.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -687,7 +687,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1500.00,
             'wholesale_price' => max(886.00, 1500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -700,7 +700,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(910.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -713,7 +713,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(954.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -726,7 +726,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1046.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -739,7 +739,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(2556.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -752,7 +752,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3600.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -765,7 +765,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(17250.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -778,7 +778,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 24000.00,
             'wholesale_price' => max(18750.00, 24000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -791,7 +791,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 32000.00,
             'wholesale_price' => max(21650.00, 32000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -804,7 +804,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 36000.00,
             'wholesale_price' => max(22750.00, 36000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -817,7 +817,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 38000.00,
             'wholesale_price' => max(23850.00, 38000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -830,7 +830,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 35000.00,
             'wholesale_price' => max(26650.00, 35000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -843,7 +843,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 90000.00,
             'wholesale_price' => max(63900.00, 90000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -856,7 +856,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 23000.00,
             'wholesale_price' => max(19150.00, 23000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -869,7 +869,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(21450.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -882,7 +882,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 55000.00,
             'wholesale_price' => max(40525.00, 55000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -895,7 +895,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 60000.00,
             'wholesale_price' => max(45200.00, 60000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -908,7 +908,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(12150.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -921,7 +921,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 21000.00,
             'wholesale_price' => max(13250.00, 21000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -934,7 +934,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(15200.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -947,7 +947,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 23000.00,
             'wholesale_price' => max(15200.00, 23000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -960,7 +960,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2812.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -973,7 +973,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(5625.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -986,7 +986,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(23000.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -999,7 +999,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(18000.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1012,7 +1012,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(12500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1025,7 +1025,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(29000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1038,7 +1038,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 450.00,
             'wholesale_price' => max(290.00, 450.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1051,7 +1051,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 55000.00,
             'wholesale_price' => max(42000.00, 55000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1064,7 +1064,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 600.00,
             'wholesale_price' => max(500.00, 600.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1077,7 +1077,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(5000.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1090,7 +1090,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(3800.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1103,7 +1103,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1116,7 +1116,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(17250.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1129,7 +1129,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(14000.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1142,7 +1142,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(14000.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1155,7 +1155,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(9000.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1168,7 +1168,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 35000.00,
             'wholesale_price' => max(32000.00, 35000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1181,7 +1181,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 33000.00,
             'wholesale_price' => max(30000.00, 33000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1194,7 +1194,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1207,7 +1207,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7000.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1220,7 +1220,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 23000.00,
             'wholesale_price' => max(15500.00, 23000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1233,7 +1233,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(11875.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1246,7 +1246,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1259,7 +1259,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1272,7 +1272,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5250.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1285,7 +1285,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(11625.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1298,7 +1298,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(11625.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1311,7 +1311,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(13250.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1324,7 +1324,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(13250.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1337,7 +1337,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2500.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1350,7 +1350,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5833.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1363,7 +1363,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(5000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1376,7 +1376,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7500.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1389,7 +1389,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(10000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1402,7 +1402,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3000.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1415,7 +1415,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(5000.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1428,7 +1428,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1166.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1441,7 +1441,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(14000.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1454,7 +1454,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(4000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1467,7 +1467,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(10000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1480,7 +1480,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 24000.00,
             'wholesale_price' => max(17000.00, 24000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1493,7 +1493,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 600.00,
             'wholesale_price' => max(390.00, 600.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1506,7 +1506,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6500.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1519,7 +1519,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1900.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1532,7 +1532,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1250.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1545,7 +1545,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 45000.00,
             'wholesale_price' => max(37000.00, 45000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1558,7 +1558,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(4010.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1571,7 +1571,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2850.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1584,7 +1584,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2500.00,
             'wholesale_price' => max(1120.00, 2500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1597,7 +1597,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 9000.00,
             'wholesale_price' => max(5192.00, 9000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1610,7 +1610,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3500.00,
             'wholesale_price' => max(2465.00, 3500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1623,7 +1623,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(2130.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1636,7 +1636,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(12000.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1649,7 +1649,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6000.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1662,7 +1662,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 800.00,
             'wholesale_price' => max(480.00, 800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1675,7 +1675,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 55000.00,
             'wholesale_price' => max(38000.00, 55000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1688,7 +1688,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1300.00,
             'wholesale_price' => max(730.00, 1300.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1701,7 +1701,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 65000.00,
             'wholesale_price' => max(50000.00, 65000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1714,7 +1714,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 140000.00,
             'wholesale_price' => max(98000.00, 140000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1727,7 +1727,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 65000.00,
             'wholesale_price' => max(39500.00, 65000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1740,7 +1740,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 600.00,
             'wholesale_price' => max(500.00, 600.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1753,7 +1753,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 50000.00,
             'wholesale_price' => max(31000.00, 50000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1766,7 +1766,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 120000.00,
             'wholesale_price' => max(73000.00, 120000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1779,7 +1779,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 300.00,
             'wholesale_price' => max(124.00, 300.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1792,7 +1792,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 85000.00,
             'wholesale_price' => max(67400.00, 85000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1805,7 +1805,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 75000.00,
             'wholesale_price' => max(44500.00, 75000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1818,7 +1818,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 600.00,
             'wholesale_price' => max(400.00, 600.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1831,7 +1831,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 700.00,
             'wholesale_price' => max(395.00, 700.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1844,7 +1844,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 700.00,
             'wholesale_price' => max(500.00, 700.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1857,7 +1857,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1400.00,
             'wholesale_price' => max(1300.00, 1400.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1870,7 +1870,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1500.00,
             'wholesale_price' => max(980.00, 1500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1883,7 +1883,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1000.00,
             'wholesale_price' => max(760.00, 1000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1896,7 +1896,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(31000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1909,7 +1909,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(18999.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1922,7 +1922,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(23000.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1935,7 +1935,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(5600.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1948,7 +1948,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2500.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1961,7 +1961,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3333.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1974,7 +1974,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(4166.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -1987,7 +1987,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 34000.00,
             'wholesale_price' => max(25500.00, 34000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2000,7 +2000,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2500.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2013,7 +2013,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(25000.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2026,7 +2026,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7000.00,
             'wholesale_price' => max(3960.00, 7000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2039,7 +2039,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2500.00,
             'wholesale_price' => max(1500.00, 2500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2052,7 +2052,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(4400.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2065,7 +2065,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(12617.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2078,7 +2078,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(7960.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2091,7 +2091,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 110000.00,
             'wholesale_price' => max(93000.00, 110000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2104,7 +2104,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 800.00,
             'wholesale_price' => max(680.00, 800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2117,7 +2117,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 135000.00,
             'wholesale_price' => max(127000.00, 135000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2130,7 +2130,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 75000.00,
             'wholesale_price' => max(60000.00, 75000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2143,7 +2143,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 55000.00,
             'wholesale_price' => max(35000.00, 55000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2156,7 +2156,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 27000.00,
             'wholesale_price' => max(22360.00, 27000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2169,7 +2169,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(6909.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2182,7 +2182,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(7500.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2195,7 +2195,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(9160.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2208,7 +2208,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(12500.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2221,7 +2221,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 75000.00,
             'wholesale_price' => max(45000.00, 75000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2234,7 +2234,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 85000.00,
             'wholesale_price' => max(54000.00, 85000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2247,7 +2247,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(2000.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2260,7 +2260,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 50000.00,
             'wholesale_price' => max(40200.00, 50000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2273,7 +2273,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 50000.00,
             'wholesale_price' => max(40200.00, 50000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2286,7 +2286,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 50000.00,
             'wholesale_price' => max(40200.00, 50000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2299,7 +2299,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1800.00,
             'wholesale_price' => max(1140.00, 1800.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2312,7 +2312,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1000.00,
             'wholesale_price' => max(500.00, 1000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2325,7 +2325,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(1875.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2338,7 +2338,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 75000.00,
             'wholesale_price' => max(57000.00, 75000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2351,7 +2351,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 90000.00,
             'wholesale_price' => max(75000.00, 90000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2364,7 +2364,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2580.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2377,7 +2377,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 300.00,
             'wholesale_price' => max(112.00, 300.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2390,7 +2390,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 35000.00,
             'wholesale_price' => max(28000.00, 35000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2403,7 +2403,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1000.00,
             'wholesale_price' => max(500.00, 1000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2416,7 +2416,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(21250.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2429,7 +2429,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 33000.00,
             'wholesale_price' => max(24750.00, 33000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2442,7 +2442,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(2000.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2455,7 +2455,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(950.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2468,7 +2468,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1000.00,
             'wholesale_price' => max(530.00, 1000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2481,7 +2481,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 300.00,
             'wholesale_price' => max(200.00, 300.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2494,7 +2494,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 35000.00,
             'wholesale_price' => max(30250.00, 35000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2507,7 +2507,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 500.00,
             'wholesale_price' => max(302.00, 500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2520,7 +2520,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(13500.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2533,7 +2533,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 300.00,
             'wholesale_price' => max(140.00, 300.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2546,7 +2546,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12500.00,
             'wholesale_price' => max(7000.00, 12500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2559,7 +2559,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7100.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2572,7 +2572,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10750.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2585,7 +2585,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 145000.00,
             'wholesale_price' => max(129000.00, 145000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2598,7 +2598,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1300.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2611,7 +2611,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(4500.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2624,7 +2624,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 90000.00,
             'wholesale_price' => max(74000.00, 90000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2637,7 +2637,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(1480.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2650,7 +2650,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 500.00,
             'wholesale_price' => max(247.00, 500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2663,7 +2663,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(11250.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2676,7 +2676,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 38000.00,
             'wholesale_price' => max(26500.00, 38000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2689,7 +2689,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(20000.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2702,7 +2702,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 70000.00,
             'wholesale_price' => max(56000.00, 70000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2715,7 +2715,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 360000.00,
             'wholesale_price' => max(337500.00, 360000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2728,7 +2728,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(1811.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2741,7 +2741,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2600.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2754,7 +2754,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3665.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2767,7 +2767,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(5800.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2780,7 +2780,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 9000.00,
             'wholesale_price' => max(5100.00, 9000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2793,7 +2793,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(3125.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2806,7 +2806,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3125.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2819,7 +2819,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(5000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2832,7 +2832,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2500.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2845,7 +2845,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(28000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2858,7 +2858,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 24000.00,
             'wholesale_price' => max(17000.00, 24000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2871,7 +2871,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3700.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2884,7 +2884,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(16500.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2897,7 +2897,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(17000.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2910,7 +2910,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(20000.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2923,7 +2923,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(18000.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2936,7 +2936,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6500.00,
             'wholesale_price' => max(3500.00, 6500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2949,7 +2949,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(14625.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2962,7 +2962,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(13750.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2975,7 +2975,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2708.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -2988,7 +2988,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2708.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3001,7 +3001,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2812.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3014,7 +3014,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(666.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3027,7 +3027,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(600.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3040,7 +3040,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(4166.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3053,7 +3053,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8700.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3066,7 +3066,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(10000.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3079,7 +3079,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(5000.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3092,7 +3092,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(35000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3105,7 +3105,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(800.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3118,7 +3118,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(7500.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3131,7 +3131,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(12000.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3144,7 +3144,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3157,7 +3157,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3170,7 +3170,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(7825.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3183,7 +3183,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2900.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3196,7 +3196,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6500.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3209,7 +3209,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10416.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3222,7 +3222,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8750.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3235,7 +3235,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(4500.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3248,7 +3248,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 32000.00,
             'wholesale_price' => max(27000.00, 32000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3261,7 +3261,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(22500.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3274,7 +3274,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 42000.00,
             'wholesale_price' => max(36000.00, 42000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3287,7 +3287,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 38000.00,
             'wholesale_price' => max(31500.00, 38000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3300,7 +3300,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 32000.00,
             'wholesale_price' => max(27000.00, 32000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3313,7 +3313,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(13500.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3326,7 +3326,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(9000.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3339,7 +3339,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6500.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3352,7 +3352,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6900.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3365,7 +3365,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(6400.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3378,7 +3378,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(12000.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3391,7 +3391,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3700.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3404,7 +3404,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(7825.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3417,7 +3417,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(9500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3430,7 +3430,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6200.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3443,7 +3443,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6200.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3456,7 +3456,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8950.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3469,7 +3469,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(9450.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3482,7 +3482,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(7500.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3495,7 +3495,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(7900.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3508,7 +3508,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(19000.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3521,7 +3521,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6250.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3534,7 +3534,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(4000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3547,7 +3547,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 1000.00,
             'wholesale_price' => max(500.00, 1000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3560,7 +3560,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(7350.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3573,7 +3573,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(7500.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3586,7 +3586,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1800.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3599,7 +3599,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 50000.00,
             'wholesale_price' => max(42000.00, 50000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3612,7 +3612,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2500.00,
             'wholesale_price' => max(1250.00, 2500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3625,7 +3625,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7500.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3638,7 +3638,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(7000.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3651,7 +3651,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6500.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3664,7 +3664,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(8500.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3677,7 +3677,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3200.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3690,7 +3690,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(15500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3703,7 +3703,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2025.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3716,7 +3716,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1300.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3729,7 +3729,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(955.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3742,7 +3742,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(1923.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3755,7 +3755,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2550.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3768,7 +3768,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2100.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3781,7 +3781,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(1750.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3794,7 +3794,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3200.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3807,7 +3807,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1500.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3820,7 +3820,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6900.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3833,7 +3833,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8375.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3846,7 +3846,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(15000.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3859,7 +3859,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(25500.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3872,7 +3872,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(14000.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3885,7 +3885,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(8150.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3898,7 +3898,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(8150.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3911,7 +3911,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(8300.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3924,7 +3924,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(16200.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3937,7 +3937,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(16250.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3950,7 +3950,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 25000.00,
             'wholesale_price' => max(15750.00, 25000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3963,7 +3963,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(7666.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3976,7 +3976,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(11071.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -3989,7 +3989,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(7666.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4002,7 +4002,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(11071.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4015,7 +4015,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1210.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4028,7 +4028,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(8750.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4041,7 +4041,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(12100.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4054,7 +4054,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(9100.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4067,7 +4067,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(8000.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4080,7 +4080,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(8000.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4093,7 +4093,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(9500.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4106,7 +4106,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4119,7 +4119,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 45000.00,
             'wholesale_price' => max(37000.00, 45000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4132,7 +4132,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 34000.00,
             'wholesale_price' => max(26000.00, 34000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4145,7 +4145,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 32000.00,
             'wholesale_price' => max(24000.00, 32000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4158,7 +4158,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(666.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4171,7 +4171,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(625.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4184,7 +4184,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(625.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4197,7 +4197,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16500.00,
             'wholesale_price' => max(15000.00, 16500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4210,7 +4210,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(19000.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4223,7 +4223,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10750.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4236,7 +4236,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(20000.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4249,7 +4249,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 38000.00,
             'wholesale_price' => max(26000.00, 38000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4262,7 +4262,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 13000.00,
             'wholesale_price' => max(8200.00, 13000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4275,7 +4275,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2950.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4288,7 +4288,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(2950.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4301,7 +4301,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 38000.00,
             'wholesale_price' => max(26000.00, 38000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4314,7 +4314,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(10200.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4327,7 +4327,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8750.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4340,7 +4340,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(12000.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4353,7 +4353,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 45000.00,
             'wholesale_price' => max(26250.00, 45000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4366,7 +4366,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 260000.00,
             'wholesale_price' => max(195000.00, 260000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4379,7 +4379,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(8000.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4392,7 +4392,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(9000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4405,7 +4405,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10000.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4418,7 +4418,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8666.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4431,7 +4431,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(13375.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4444,7 +4444,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(4300.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4457,7 +4457,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(3500.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4470,7 +4470,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7250.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4483,7 +4483,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5500.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4496,7 +4496,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(24500.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4509,7 +4509,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 500.00,
             'wholesale_price' => max(245.00, 500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4522,7 +4522,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 28000.00,
             'wholesale_price' => max(22000.00, 28000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4535,7 +4535,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(7800.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4548,7 +4548,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4561,7 +4561,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 65000.00,
             'wholesale_price' => max(33500.00, 65000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4574,7 +4574,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(2250.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4587,7 +4587,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8500.00,
             'wholesale_price' => max(6000.00, 8500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4600,7 +4600,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17000.00,
             'wholesale_price' => max(15200.00, 17000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4613,7 +4613,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3000.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4626,7 +4626,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(5000.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4639,7 +4639,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(37000.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4652,7 +4652,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(18500.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4665,7 +4665,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 65000.00,
             'wholesale_price' => max(59000.00, 65000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4678,7 +4678,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2250.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 5,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4691,7 +4691,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(8000.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4704,7 +4704,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 16000.00,
             'wholesale_price' => max(10500.00, 16000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4717,7 +4717,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 26000.00,
             'wholesale_price' => max(19000.00, 26000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4730,7 +4730,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 32000.00,
             'wholesale_price' => max(27000.00, 32000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4743,7 +4743,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(34500.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4756,7 +4756,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 48000.00,
             'wholesale_price' => max(43000.00, 48000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4769,7 +4769,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 20000.00,
             'wholesale_price' => max(16500.00, 20000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4782,7 +4782,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8500.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4795,7 +4795,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6250.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4808,7 +4808,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(3000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4821,7 +4821,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2700.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4834,7 +4834,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2700.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4847,7 +4847,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(2700.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4860,7 +4860,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(5625.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4873,7 +4873,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(8250.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4886,7 +4886,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(3000.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4899,7 +4899,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(6000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4912,7 +4912,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(11500.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4925,7 +4925,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2700.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4938,7 +4938,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(5416.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4951,7 +4951,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(9583.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4964,7 +4964,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(1500.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4977,7 +4977,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 14000.00,
             'wholesale_price' => max(11000.00, 14000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -4990,7 +4990,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3700.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5003,7 +5003,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7875.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5016,7 +5016,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3340.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5029,7 +5029,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(6116.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5042,7 +5042,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 11000.00,
             'wholesale_price' => max(7208.00, 11000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5055,7 +5055,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(9250.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5068,7 +5068,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 17500.00,
             'wholesale_price' => max(15000.00, 17500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5081,7 +5081,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7500.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5094,7 +5094,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(29508.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5107,7 +5107,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15500.00,
             'wholesale_price' => max(10000.00, 15500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5120,7 +5120,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(4000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5133,7 +5133,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(27540.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5146,7 +5146,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(19668.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5159,7 +5159,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2295.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5172,7 +5172,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(5000.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5185,7 +5185,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 7500.00,
             'wholesale_price' => max(5000.00, 7500.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5198,7 +5198,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5211,7 +5211,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3100.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5224,7 +5224,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8750.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5237,7 +5237,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3000.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5250,7 +5250,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5175.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5263,7 +5263,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 260000.00,
             'wholesale_price' => max(216000.00, 260000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5276,7 +5276,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(6600.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5289,7 +5289,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5833.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5302,7 +5302,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 2000.00,
             'wholesale_price' => max(1000.00, 2000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5315,7 +5315,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8000.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5328,7 +5328,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 22000.00,
             'wholesale_price' => max(15000.00, 22000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5341,7 +5341,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 3000.00,
             'wholesale_price' => max(2500.00, 3000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5354,7 +5354,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 9000.00,
             'wholesale_price' => max(7000.00, 9000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5367,7 +5367,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8750.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5380,7 +5380,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 10000.00,
             'wholesale_price' => max(7000.00, 10000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5393,7 +5393,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10500.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5406,7 +5406,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(2084.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5419,7 +5419,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 18000.00,
             'wholesale_price' => max(13333.00, 18000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5432,7 +5432,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(10833.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5445,7 +5445,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 8000.00,
             'wholesale_price' => max(5000.00, 8000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5458,7 +5458,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(11500.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5471,7 +5471,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 6000.00,
             'wholesale_price' => max(3500.00, 6000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5484,7 +5484,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(3500.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5497,7 +5497,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2700.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5510,7 +5510,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 40000.00,
             'wholesale_price' => max(30156.00, 40000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5523,7 +5523,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 30000.00,
             'wholesale_price' => max(25308.00, 30000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5536,7 +5536,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 15000.00,
             'wholesale_price' => max(12000.00, 15000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5549,7 +5549,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 5000.00,
             'wholesale_price' => max(2929.00, 5000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5562,7 +5562,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 4000.00,
             'wholesale_price' => max(2109.00, 4000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5575,7 +5575,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8500.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5588,7 +5588,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(8550.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5601,7 +5601,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 12000.00,
             'wholesale_price' => max(4625.00, 12000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
@@ -5614,7 +5614,7 @@ class DatabaseSeeder extends Seeder
             'sell_price' => 145000.00,
             'wholesale_price' => max(59000.00, 145000.00 * 0.998),
             'wholesale_min_qty' => 10,
-            'stock' => 0,
+            'stock' => 100,
             'min_stock' => 5,
         ]);
 
