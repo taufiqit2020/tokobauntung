@@ -328,7 +328,12 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-slate-500 font-bold mb-1.5">JUMLAH STOK</label>
+                    <input type="number" name="stock" id="edit-stock" required min="0"
+                           class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
                 <div>
                     <label class="block text-slate-500 font-bold mb-1.5">STOK MINIMUM ALARM</label>
                     <input type="number" name="min_stock" id="edit-min-stock" required min="0"
@@ -380,6 +385,7 @@
         document.getElementById('edit-sell-price').value = parseInt(product.sell_price);
         document.getElementById('edit-wholesale-price').value = product.wholesale_price ? parseInt(product.wholesale_price) : '';
         document.getElementById('edit-wholesale-min-qty').value = product.wholesale_min_qty || '';
+        document.getElementById('edit-stock').value = product.stock;
         document.getElementById('edit-min-stock').value = product.min_stock;
         document.getElementById('edit-is-active').value = product.is_active;
 

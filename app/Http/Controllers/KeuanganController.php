@@ -157,11 +157,29 @@ class KeuanganController extends Controller
             'sell_price' => 'required|numeric|min:0',
             'wholesale_price' => 'nullable|numeric|min:0',
             'wholesale_min_qty' => 'nullable|integer|min:1',
+            'stock' => 'required|integer|min:0',
             'min_stock' => 'required|integer|min:0',
             'is_active' => 'required|boolean',
         ]);
 
-        $product->update($request->all());
+        DB::transaction(function () use ($product, $request) {
+            $oldStock = $product->stock;
+            $newStock = $request->stock;
+
+            if ($oldStock != $newStock) {
+                $qtyChange = $newStock - $oldStock;
+                StockLog::create([
+                    'product_id' => $product->id,
+                    'type' => $qtyChange > 0 ? 'adjustment_plus' : 'adjustment_minus',
+                    'qty_change' => $qtyChange,
+                    'current_stock' => $newStock,
+                    'reason' => 'Koreksi Stok via Edit Produk',
+                    'user_id' => Auth::id(),
+                ]);
+            }
+
+            $product->update($request->all());
+        });
 
         return redirect()->route('keuangan.products')->with('success', 'Data produk berhasil diperbarui.');
     }
