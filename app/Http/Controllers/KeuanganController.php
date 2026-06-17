@@ -393,4 +393,20 @@ class KeuanganController extends Controller
             'totalRevenue', 'totalDiscount', 'cashRevenue', 'qrisRevenue'
         ));
     }
+
+    /**
+     * Cetak ulang struk transaksi dari laporan penjualan.
+     */
+    public function printReceipt($id)
+    {
+        $transaction = Transaction::findOrFail($id);
+        $receiptText = $transaction->generateReceiptText();
+        
+        $encodedText = urlencode($receiptText);
+        $baseUrl = url('/');
+        $responseUrl = "{$baseUrl}/api/print-receipt?content={$encodedText}";
+        $schemeUrl = "my.bluetoothprint.scheme://{$responseUrl}";
+        
+        return redirect()->away($schemeUrl);
+    }
 }

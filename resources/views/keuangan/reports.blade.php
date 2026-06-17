@@ -160,6 +160,7 @@
                         <th class="p-4 text-right">Subtotal</th>
                         <th class="p-4 text-right">Grosir</th>
                         <th class="p-4 text-right">Total Akhir</th>
+                        <th class="p-4 text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 text-slate-700">
@@ -178,10 +179,20 @@
                                 {{ $trans->discount > 0 ? 'Rp ' . number_format($trans->discount, 0, ',', '.') : '-' }}
                             </td>
                             <td class="p-4 text-right font-extrabold text-indigo-600 text-sm">Rp {{ number_format($trans->grand_total, 0, ',', '.') }}</td>
+                            <td class="p-4 text-center">
+                                <a href="{{ route('keuangan.reports.print', $trans->id) }}"
+                                   class="inline-flex items-center space-x-1 py-1 px-2.5 bg-indigo-50 border border-indigo-200 hover:border-indigo-500 hover:text-indigo-600 rounded-lg text-indigo-700 font-bold transition-all text-[10px]"
+                                   title="Cetak Struk">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.821V21h10.56v-7.179M9 3.75h6M18 10.5h.008v.008H18V10.5Zm-1.8 1.35H7.8M6 6.75h12v6H6v-6Z" />
+                                    </svg>
+                                    <span>Cetak</span>
+                                </a>
+                            </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="7" class="p-8 text-center text-slate-400 font-medium">Tidak ada data penjualan untuk periode filter ini.</td>
+                            <td colspan="8" class="p-8 text-center text-slate-400 font-medium">Tidak ada data penjualan untuk periode filter ini.</td>
                         </tr>
                     @endforelse
                 </tbody>

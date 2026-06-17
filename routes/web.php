@@ -59,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
         
         // Financial Reports
         Route::get('/reports', [KeuanganController::class, 'reports'])->name('reports');
+        Route::get('/reports/{id}/print', [KeuanganController::class, 'printReceipt'])->name('reports.print');
     });
 
     // 3. Admin IT Routes
