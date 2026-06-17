@@ -93,8 +93,8 @@
             <div class="mt-12 text-xs">
                 <div class="grid grid-cols-2 text-center">
                     <div class="space-y-16">
-                        <p class="font-bold uppercase tracking-wider text-slate-800">Kepala Keuangan,</p>
-                        <p class="font-bold underline uppercase text-slate-900">Siti Kamariah, S.Pd.</p>
+                        <p class="font-bold tracking-wider text-slate-800">Kepala Administrasi dan Keuangan,</p>
+                        <p class="font-bold underline text-slate-900">Siti Kamariah, S.Pd.</p>
                     </div>
                     <div class="space-y-16">
                         <p class="font-bold uppercase tracking-wider text-slate-800">Mengetahui,<br>Direktur,</p>

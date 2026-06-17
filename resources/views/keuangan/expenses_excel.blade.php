@@ -161,7 +161,7 @@
             <td colspan="5">&nbsp;</td>
         </tr>
         <tr>
-            <td class="signature-title" colspan="2">KEPALA KEUANGAN,</td>
+            <td class="signature-title" colspan="2">KEPALA ADMINISTRASI DAN KEUANGAN,</td>
             <td>&nbsp;</td>
             <td class="signature-title" colspan="2">Mengetahui,<br>DIREKTUR,</td>
         </tr>
@@ -169,7 +169,7 @@
             <td colspan="5" style="height: 50px;">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">SITI KAMARIAH, S.Pd.</td>
+            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Siti Kamariah, S.Pd.</td>
             <td>&nbsp;</td>
             <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Hj. NORMAULIDA, S.H.</td>
         </tr>
