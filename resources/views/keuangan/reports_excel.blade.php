@@ -75,7 +75,7 @@
             <td colspan="7" style="text-align: center;">Periode: {{ $startDate->translatedFormat('d F Y') }} s.d. {{ $endDate->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
-            <td colspan="7" style="text-align: center; font-size: 10px; color: #777777;">Waktu Unduh: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WIB</td>
+            <td colspan="7" style="text-align: center; font-size: 10px; color: #777777;">Waktu Unduh: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WITA</td>
         </tr>
         @php
             $selectedCashierNames = 'Semua Kasir';

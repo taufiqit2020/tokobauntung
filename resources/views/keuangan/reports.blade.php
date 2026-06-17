@@ -166,7 +166,7 @@
                     @forelse($transactions as $trans)
                         <tr class="hover:bg-slate-50/50 transition-all">
                             <td class="p-4 font-bold text-slate-900 tracking-wide">{{ $trans->invoice_number }}</td>
-                            <td class="p-4 text-slate-500">{{ \Carbon\Carbon::parse($trans->created_at)->isoFormat('D MMMM YYYY, H:mm') }} WIB</td>
+                            <td class="p-4 text-slate-500">{{ \Carbon\Carbon::parse($trans->created_at)->isoFormat('D MMMM YYYY, H:mm') }} WITA</td>
                             <td class="p-4 font-semibold text-slate-700">{{ $trans->user->name }}</td>
                             <td class="p-4 text-center">
                                 <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase {{ $trans->payment_method === 'cash' ? 'bg-slate-100 text-slate-700 border border-slate-200' : 'bg-teal-50 text-teal-700 border border-teal-100' }}">
