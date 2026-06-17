@@ -220,9 +220,13 @@ class KeuanganController extends Controller
             ->with(['product', 'user'])
             ->orderBy('id', 'desc');
 
-        // Handle Excel export
-        if ($request->export === 'excel') {
+        // Handle Excel export & preview
+        if (in_array($request->export, ['excel', 'preview'])) {
             $opnameLogs = $query->get();
+            if ($request->export === 'preview') {
+                $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
+                return view('keuangan.stock_opname_preview', compact('opnameLogs', 'excelUrl'));
+            }
             $filename = 'laporan-stock-opname-' . Carbon::now()->format('Ymd') . '.xls';
 
             return response()->view('keuangan.stock_opname_excel', compact(
@@ -298,9 +302,15 @@ class KeuanganController extends Controller
             ->whereYear('expense_date', Carbon::now()->year)
             ->sum('amount');
 
-        // Handle Excel export
-        if ($request->export === 'excel') {
+        // Handle Excel export & preview
+        if (in_array($request->export, ['excel', 'preview'])) {
             $expenses = $query->orderBy('expense_date', 'desc')->get();
+            if ($request->export === 'preview') {
+                $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
+                return view('keuangan.expenses_preview', compact(
+                    'expenses', 'categories', 'totalExpenseThisMonth', 'excelUrl'
+                ));
+            }
             $filename = 'laporan-pengeluaran-' . Carbon::now()->format('Ymd') . '.xls';
 
             return response()->view('keuangan.expenses_excel', compact(
@@ -378,9 +388,16 @@ class KeuanganController extends Controller
         $cashRevenue = (clone $statsQuery)->where('payment_method', 'cash')->sum('grand_total');
         $qrisRevenue = (clone $statsQuery)->where('payment_method', 'qris')->sum('grand_total');
 
-        // Handle Excel export
-        if ($request->export === 'excel') {
+        // Handle Excel export & preview
+        if (in_array($request->export, ['excel', 'preview'])) {
             $transactions = $query->orderBy('created_at', 'desc')->get();
+            if ($request->export === 'preview') {
+                $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
+                return view('keuangan.reports_preview', compact(
+                    'transactions', 'startDate', 'endDate',
+                    'totalRevenue', 'totalDiscount', 'cashRevenue', 'qrisRevenue', 'excelUrl'
+                ));
+            }
             $filename = 'laporan-penjualan-' . $startDate->format('Ymd') . '-to-' . $endDate->format('Ymd') . '.xls';
 
             return response()->view('keuangan.reports_excel', compact(
@@ -428,9 +445,15 @@ class KeuanganController extends Controller
             ->whereYear('income_date', Carbon::now()->year)
             ->sum('amount');
 
-        // Handle Excel export
-        if ($request->export === 'excel') {
+        // Handle Excel export & preview
+        if (in_array($request->export, ['excel', 'preview'])) {
             $incomes = $query->orderBy('income_date', 'desc')->get();
+            if ($request->export === 'preview') {
+                $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
+                return view('keuangan.es_teguk_preview', compact(
+                    'incomes', 'totalIncomeThisMonth', 'excelUrl'
+                ));
+            }
             $filename = 'laporan-pemasukan-es-teguk-' . Carbon::now()->format('Ymd') . '.xls';
 
             return response()->view('keuangan.es_teguk_excel', compact(

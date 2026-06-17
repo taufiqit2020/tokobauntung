@@ -267,10 +267,10 @@
         }
 
         // Add export mode
-        params.set('export', 'excel');
+        params.set('export', 'preview');
 
         const url = `{{ route('keuangan.reports') }}?${params.toString()}`;
-        window.location.href = url;
+        window.open(url, '_blank');
     }
 
     // Close cashier dropdown on click outside

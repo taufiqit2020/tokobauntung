@@ -121,8 +121,8 @@
 <script>
     function exportExcel() {
         const params = new URLSearchParams();
-        params.set('export', 'excel');
-        window.location.href = `{{ route('keuangan.es_teguk') }}?${params.toString()}`;
+        params.set('export', 'preview');
+        window.open(`{{ route('keuangan.es_teguk') }}?${params.toString()}`, '_blank');
     }
 </script>
 @endsection

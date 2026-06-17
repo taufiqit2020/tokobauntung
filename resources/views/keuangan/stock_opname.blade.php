@@ -179,7 +179,7 @@
     }
 
     function exportExcel() {
-        window.location.href = `{{ route('keuangan.stock_opname') }}?export=excel`;
+        window.open(`{{ route('keuangan.stock_opname') }}?export=preview`, '_blank');
     }
 </script>
 @endsection

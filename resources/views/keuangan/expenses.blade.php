@@ -148,8 +148,8 @@
         if (select && select.value) {
             params.set('category', select.value);
         }
-        params.set('export', 'excel');
-        window.location.href = `{{ route('keuangan.expenses') }}?${params.toString()}`;
+        params.set('export', 'preview');
+        window.open(`{{ route('keuangan.expenses') }}?${params.toString()}`, '_blank');
     }
 </script>
 @endsection
