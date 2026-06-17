@@ -59,6 +59,9 @@
                         <a href="{{ route('keuangan.expenses') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.expenses') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
                             <span>Pengeluaran Toko</span>
                         </a>
+                        <a href="{{ route('keuangan.es_teguk') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.es_teguk') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
+                            <span>Pemasukan Es Teguk</span>
+                        </a>
                         <a href="{{ route('keuangan.reports') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.reports') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
                             <span>Laporan Penjualan</span>
                         </a>
@@ -136,6 +139,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5h16.5M4.5 19.5h15M5.25 4.5V19.5m13.5-15V19.5m-10.5-15v10.5m4.5-10.5v10.5m-6.75 3h9" />
                         </svg>
                         <span>Pengeluaran Toko</span>
+                    </a>
+
+                    <a href="{{ route('keuangan.es_teguk') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.es_teguk') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-1.958-.659-1.171-.879-1.171-2.305 0-3.182 1.172-.879 3.07-.879 4.242 0 .88.66 1.459 1.579 1.737 2.618M12 3v3m0 12v3" />
+                        </svg>
+                        <span>Pemasukan Es Teguk</span>
                     </a>
 
                     <a href="{{ route('keuangan.reports') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.reports') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">

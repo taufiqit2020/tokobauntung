@@ -56,6 +56,10 @@ Route::middleware(['auth'])->group(function () {
         // Expenses CRUD
         Route::get('/expenses', [KeuanganController::class, 'expenses'])->name('expenses');
         Route::post('/expenses', [KeuanganController::class, 'storeExpense'])->name('expenses.store');
+
+        // ES TEGUK Incomes CRUD
+        Route::get('/es-teguk', [KeuanganController::class, 'esTegukIncomes'])->name('es_teguk');
+        Route::post('/es-teguk', [KeuanganController::class, 'storeEsTegukIncome'])->name('es_teguk.store');
         
         // Financial Reports
         Route::get('/reports', [KeuanganController::class, 'reports'])->name('reports');

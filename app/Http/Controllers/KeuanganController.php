@@ -11,6 +11,7 @@ use App\Models\TransactionDetail;
 use App\Models\Expense;
 use App\Models\Supplier;
 use App\Models\User;
+use App\Models\EsTegukIncome;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -35,8 +36,9 @@ class KeuanganController extends Controller
         })->sum(DB::raw('buy_price * qty'));
         
         $expenseToday = Expense::whereDate('expense_date', $today)->sum('amount');
+        $esTegukToday = EsTegukIncome::whereDate('income_date', $today)->sum('amount');
         $grossProfitToday = $revenueToday - $cogsToday;
-        $netProfitToday = $grossProfitToday - $expenseToday;
+        $netProfitToday = $grossProfitToday - $expenseToday + $esTegukToday;
 
         // 2. Hitung Keuangan Bulan Ini
         $revenueMonth = Transaction::whereMonth('created_at', $thisMonth)
@@ -50,9 +52,12 @@ class KeuanganController extends Controller
         $expenseMonth = Expense::whereMonth('expense_date', $thisMonth)
             ->whereYear('expense_date', $thisYear)
             ->sum('amount');
+        $esTegukMonth = EsTegukIncome::whereMonth('income_date', $thisMonth)
+            ->whereYear('income_date', $thisYear)
+            ->sum('amount');
             
         $grossProfitMonth = $revenueMonth - $cogsMonth;
-        $netProfitMonth = $grossProfitMonth - $expenseMonth;
+        $netProfitMonth = $grossProfitMonth - $expenseMonth + $esTegukMonth;
 
         // 3. Peringatan Stok Tipis
         $lowStockCount = Product::where('stock', '<=', DB::raw('min_stock'))->count();
@@ -72,7 +77,8 @@ class KeuanganController extends Controller
 
         return view('keuangan.dashboard', compact(
             'revenueToday', 'netProfitToday', 'revenueMonth', 'netProfitMonth',
-            'lowStockCount', 'lowStockProducts', 'topProducts', 'activeShifts', 'recentShiftLogs'
+            'lowStockCount', 'lowStockProducts', 'topProducts', 'activeShifts', 'recentShiftLogs',
+            'esTegukToday', 'esTegukMonth'
         ));
     }
 
@@ -408,5 +414,56 @@ class KeuanganController extends Controller
         $schemeUrl = "my.bluetoothprint.scheme://{$responseUrl}";
         
         return redirect()->away($schemeUrl);
+    }
+
+    /**
+     * Pemasukan Es Teguk: Daftar & Tambah Pemasukan.
+     */
+    public function esTegukIncomes(Request $request)
+    {
+        $query = EsTegukIncome::with('user');
+
+        // Total pemasukan bulan ini
+        $totalIncomeThisMonth = EsTegukIncome::whereMonth('income_date', Carbon::now()->month)
+            ->whereYear('income_date', Carbon::now()->year)
+            ->sum('amount');
+
+        // Handle Excel export
+        if ($request->export === 'excel') {
+            $incomes = $query->orderBy('income_date', 'desc')->get();
+            $filename = 'laporan-pemasukan-es-teguk-' . Carbon::now()->format('Ymd') . '.xls';
+
+            return response()->view('keuangan.es_teguk_excel', compact(
+                'incomes', 'totalIncomeThisMonth'
+            ))
+            ->header('Content-Type', 'application/vnd.ms-excel; charset=utf-8')
+            ->header('Content-Disposition', 'attachment; filename="' . $filename . '"')
+            ->header('Cache-Control', 'max-age=0');
+        }
+
+        $incomes = $query->orderBy('income_date', 'desc')->paginate(10);
+
+        return view('keuangan.es_teguk', compact('incomes', 'totalIncomeThisMonth'));
+    }
+
+    /**
+     * Menyimpan Pemasukan Es Teguk baru.
+     */
+    public function storeEsTegukIncome(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required|numeric|min:1',
+            'description' => 'nullable|string',
+            'income_date' => 'required|date',
+        ]);
+
+        EsTegukIncome::create([
+            'amount' => $request->amount,
+            'description' => $request->description,
+            'income_date' => $request->income_date,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('keuangan.es_teguk')->with('success', 'Pemasukan Es Teguk berhasil dicatat.');
     }
 }

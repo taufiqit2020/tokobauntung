@@ -29,7 +29,7 @@
                 <p class="text-2xl font-bold {{ $netProfitToday >= 0 ? 'text-emerald-600' : 'text-rose-600' }}">
                     Rp {{ number_format($netProfitToday, 0, ',', '.') }}
                 </p>
-                <span class="text-[10px] text-slate-400">Omset - (HPP + Biaya)</span>
+                <span class="text-[10px] text-slate-400">Omset - (HPP + Biaya) + Es Teguk</span>
             </div>
             <div class="p-3 {{ $netProfitToday >= 0 ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600' }} rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -59,7 +59,7 @@
                 <p class="text-2xl font-bold {{ $netProfitMonth >= 0 ? 'text-emerald-600' : 'text-rose-600' }}">
                     Rp {{ number_format($netProfitMonth, 0, ',', '.') }}
                 </p>
-                <span class="text-[10px] text-slate-400">Estimasi laba bersih bersih</span>
+                <span class="text-[10px] text-slate-400">Estimasi laba bersih (Inc. Es Teguk)</span>
             </div>
             <div class="p-3 {{ $netProfitMonth >= 0 ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600' }} rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
