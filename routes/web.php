@@ -97,12 +97,4 @@ Route::get('/force-update-stock', function () {
     }
 });
 
-// Rute Sementara untuk Jalankan Migrasi di Hostinger
-Route::get('/run-migrations', function () {
-    try {
-        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-        return 'Sukses: Migrasi database berhasil dijalankan!<br><pre>' . \Illuminate\Support\Facades\Artisan::output() . '</pre>';
-    } catch (\Exception $e) {
-        return 'Eror menjalankan migrasi: ' . $e->getMessage();
-    }
-});
+
