@@ -49,6 +49,12 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/products/{id}/update', [KeuanganController::class, 'updateProduct'])->name('products.update');
         Route::post('/products/{id}/delete', [KeuanganController::class, 'deleteProduct'])->name('products.delete');
         
+        // Categories CRUD
+        Route::get('/categories', [KeuanganController::class, 'categories'])->name('categories');
+        Route::post('/categories', [KeuanganController::class, 'storeCategory'])->name('categories.store');
+        Route::post('/categories/{id}/update', [KeuanganController::class, 'updateCategory'])->name('categories.update');
+        Route::post('/categories/{id}/delete', [KeuanganController::class, 'deleteCategory'])->name('categories.delete');
+        
         // Stock Opname
         Route::get('/stock-opname', [KeuanganController::class, 'stockOpname'])->name('stock_opname');
         Route::post('/stock-opname', [KeuanganController::class, 'storeStockOpname'])->name('stock_opname.store');

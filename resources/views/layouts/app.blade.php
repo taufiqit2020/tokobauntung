@@ -53,6 +53,9 @@
                         <a href="{{ route('keuangan.products') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.products') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
                             <span>Produk & Stok</span>
                         </a>
+                        <a href="{{ route('keuangan.categories') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.categories') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
+                            <span>Kategori Barang</span>
+                        </a>
                         <a href="{{ route('keuangan.stock_opname') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.stock_opname') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
                             <span>Stock Opname</span>
                         </a>
@@ -125,6 +128,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
                         </svg>
                         <span>Produk & Stok</span>
+                    </a>
+
+                    <a href="{{ route('keuangan.categories') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.categories') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.3m18 0V5.25A2.25 2.25 0 0 0 18.75 3H14.43m-4.862 0v18m4.862-18v18M3 9.568h18M3 14.432h18M3 18.75A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V14.43" />
+                        </svg>
+                        <span>Kategori Barang</span>
                     </a>
 
                     <a href="{{ route('keuangan.stock_opname') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-sm {{ Route::is('keuangan.stock_opname') ? 'bg-indigo-600 text-white font-semibold shadow-md shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100' }}">

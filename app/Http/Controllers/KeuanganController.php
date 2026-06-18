@@ -210,6 +210,77 @@ class KeuanganController extends Controller
     }
 
     /**
+     * Manajemen Kategori Barang: Daftar & CRUD Kategori.
+     */
+    public function categories(Request $request)
+    {
+        $query = Category::query();
+
+        // Filter pencarian
+        if ($request->filled('search')) {
+            $query->where('name', 'like', "%{$request->search}%");
+        }
+
+        $categories = $query->orderBy('name', 'asc')->paginate(10);
+
+        return view('keuangan.categories', compact('categories'));
+    }
+
+    /**
+     * Menyimpan Kategori baru.
+     */
+    public function storeCategory(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+            'description' => 'nullable|string',
+        ]);
+
+        Category::create([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('keuangan.categories')->with('success', 'Kategori barang baru berhasil ditambahkan.');
+    }
+
+    /**
+     * Memperbarui Kategori.
+     */
+    public function updateCategory(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $id,
+            'description' => 'nullable|string',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('keuangan.categories')->with('success', 'Kategori barang berhasil diperbarui.');
+    }
+
+    /**
+     * Menghapus Kategori (dengan validasi relasi produk).
+     */
+    public function deleteCategory($id)
+    {
+        $category = Category::findOrFail($id);
+
+        // Cek jika kategori memiliki produk
+        if ($category->products()->exists()) {
+            return redirect()->route('keuangan.categories')->withErrors(['delete' => 'Kategori ini tidak dapat dihapus karena masih memiliki produk di dalamnya.']);
+        }
+
+        $category->delete();
+        return redirect()->route('keuangan.categories')->with('success', 'Kategori barang berhasil dihapus.');
+    }
+
+    /**
      * Stock Opname: Riwayat & Form Penyesuaian.
      */
     public function stockOpname(Request $request)
