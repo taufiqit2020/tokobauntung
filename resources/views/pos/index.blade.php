@@ -529,7 +529,8 @@
                     </svg>
                 </div>
                 <h2 class="text-xl font-bold text-white tracking-tight">Pembayaran Sukses!</h2>
-                <p class="text-emerald-100 text-xs mt-1">Transaksi telah tersimpan</p>
+                <p id="success-modal-amount-paid" class="text-white text-base font-extrabold mt-2 bg-emerald-600/35 px-4 py-1.5 rounded-full border border-emerald-400/30 inline-block">Rp 0</p>
+                <p class="text-emerald-100 text-[10px] opacity-75 mt-0.5">Transaksi telah tersimpan</p>
             </div>
             
             <!-- Receipt Preview Area -->
@@ -1152,7 +1153,7 @@
                     renderProducts();
                     
                     // Show Success Modal
-                    openSuccessModal(data.receipt);
+                    openSuccessModal(data.receipt, payload.amount_paid);
                     
                     if (document.getElementById('auto-print-checkbox').checked) {
                         setTimeout(() => printViaThermerModal(), 500);
@@ -1209,7 +1210,7 @@
             renderProducts();
             
             // Show Success Modal
-            openSuccessModal(localReceipt);
+            openSuccessModal(localReceipt, payload.amount_paid);
             
             if (document.getElementById('auto-print-checkbox').checked) {
                 setTimeout(() => printViaThermerModal(), 500);
@@ -1485,8 +1486,14 @@
     </script>
     <!-- PWA Service Worker Registration -->
     <script>
-        function openSuccessModal(receiptText) {
+        function openSuccessModal(receiptText, amountPaid) {
             document.getElementById('success-receipt-preview').innerText = receiptText;
+            if (amountPaid !== undefined && amountPaid !== null) {
+                document.getElementById('success-modal-amount-paid').innerText = "Total Bayar: Rp " + numberFormat(amountPaid);
+                document.getElementById('success-modal-amount-paid').style.display = 'inline-block';
+            } else {
+                document.getElementById('success-modal-amount-paid').style.display = 'none';
+            }
             document.getElementById('success-modal').style.display = 'flex';
         }
         function closeSuccessModal() {
