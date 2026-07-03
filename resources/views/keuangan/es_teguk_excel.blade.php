@@ -72,7 +72,7 @@
             <td colspan="4" class="header-address">{{ \App\Models\Setting::getValue('shop_address', 'Jl. Panglima Batur, Komet, Banjarbaru') }}</td>
         </tr>
         <tr>
-            <td colspan="4" style="text-align: center; font-size: 10px; color: #777777;">Waktu Unduh: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WITA</td>
+            <td colspan="5" style="text-align: center; font-size: 10px; color: #777777;">Periode: {{ $startDate->translatedFormat('d F Y') }} s/d {{ $endDate->translatedFormat('d F Y') }} · Dicetak: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WITA</td>
         </tr>
         <tr>
             <td colspan="4">&nbsp;</td>
@@ -83,12 +83,12 @@
     <table cellpadding="5" style="border-collapse: collapse;">
         <thead>
             <tr>
-                <th colspan="2" class="table-header" style="background-color: #10b981; color: #ffffff;">RINGKASAN PEMASUKAN BULAN INI</th>
+                <th colspan="2" class="table-header" style="background-color: #10b981; color: #ffffff;">RINGKASAN PEMASUKAN PERIODE</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="stats-label">Total Pemasukan Bulan Ini (Aktif)</td>
+                <td class="stats-label">Total Pemasukan Periode Ini</td>
                 <td class="stats-val" style="color: #10b981;">{{ number_format($totalIncomeThisMonth, 0, ',', '.') }}</td>
             </tr>
         </tbody>
@@ -110,6 +110,7 @@
     <table cellpadding="5" style="border-collapse: collapse;">
         <thead>
             <tr>
+                <th class="table-header">No.</th>
                 <th class="table-header">Tanggal</th>
                 <th class="table-header">Keterangan / Deskripsi</th>
                 <th class="table-header">Nominal (Rp)</th>
@@ -121,6 +122,7 @@
             @forelse($incomes as $inc)
                 @php $grandTotal += $inc->amount; @endphp
                 <tr>
+                    <td class="text" style="text-align:center;">{{ $loop->iteration }}</td>
                     <td class="date">{{ $inc->income_date }}</td>
                     <td class="text">{{ $inc->description ?: '-' }}</td>
                     <td class="number">{{ number_format($inc->amount, 0, ',', '.') }}</td>
@@ -133,7 +135,7 @@
             @endforelse
             @if(count($incomes) > 0)
                 <tr style="font-weight: bold; background-color: #f9fafb;">
-                    <td colspan="2" class="text" style="text-align: right; font-weight: bold;">TOTAL PEMASUKAN FILTER:</td>
+                    <td colspan="3" class="text" style="text-align: right; font-weight: bold;">TOTAL PEMASUKAN:</td>
                     <td class="number" style="color: #10b981; font-weight: bold;">{{ number_format($grandTotal, 0, ',', '.') }}</td>
                     <td class="text">&nbsp;</td>
                 </tr>

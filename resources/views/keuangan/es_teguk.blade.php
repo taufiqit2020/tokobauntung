@@ -349,6 +349,55 @@
 
     /* Pagination wrapper */
     .pagination-wrap { padding: 14px 16px; border-top: 1px solid #f1f5f9; background: #f8fafc; }
+
+    /* ===== FILTER CARD ===== */
+    .filter-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 14px 18px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .filter-form {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    .filter-field { flex: 1; min-width: 140px; }
+    .btn-filter {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 18px;
+        background: linear-gradient(135deg, #06b6d4, #2563eb);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: opacity 0.2s;
+        white-space: nowrap;
+    }
+    .btn-filter:hover { opacity: 0.9; }
+    .btn-reset {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 14px;
+        background: #f1f5f9;
+        color: #64748b;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        text-decoration: none;
+        font-family: inherit;
+        white-space: nowrap;
+        transition: background 0.2s;
+    }
+    .btn-reset:hover { background: #e2e8f0; }
 </style>
 @endpush
 
@@ -411,18 +460,40 @@
     {{-- ============ RIGHT: STATS + TABLE ============ --}}
     <div class="right-col">
 
-        {{-- BANNER --}}
         <div class="banner">
             <div class="banner-text">
-                <div class="banner-label">Pemasukan Es Teguk Bulan Ini</div>
+                <div class="banner-label">Pemasukan Es Teguk — Periode {{ $startDate->translatedFormat('d M Y') }} s/d {{ $endDate->translatedFormat('d M Y') }}</div>
                 <div class="banner-amount">Rp {{ number_format($totalIncomeThisMonth, 0, ',', '.') }}</div>
-                <div class="banner-sub">Total kumulatif pendapatan bisnis Es Teguk bulan berjalan</div>
+                <div class="banner-sub">Total kumulatif pendapatan bisnis Es Teguk pada periode terpilih</div>
             </div>
             <div class="banner-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#67e8f9" style="width:34px;height:34px">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/>
                 </svg>
             </div>
+        </div>
+
+        {{-- FILTER CARD --}}
+        <div class="filter-card">
+            <form action="{{ route('keuangan.es_teguk') }}" method="GET" class="filter-form">
+                <div class="filter-field">
+                    <label class="form-label">Dari Tanggal</label>
+                    <input type="date" name="start_date" value="{{ $startDate->format('Y-m-d') }}" class="form-input">
+                </div>
+                <div class="filter-field">
+                    <label class="form-label">Sampai Tanggal</label>
+                    <input type="date" name="end_date" value="{{ $endDate->format('Y-m-d') }}" class="form-input">
+                </div>
+                <div class="filter-field" style="display:flex;align-items:flex-end;gap:8px;">
+                    <button type="submit" class="btn-filter">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" style="width:13px;height:13px">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"/>
+                        </svg>
+                        Filter
+                    </button>
+                    <a href="{{ route('keuangan.es_teguk') }}" class="btn-reset">Reset</a>
+                </div>
+            </form>
         </div>
 
         {{-- TABLE CARD --}}
@@ -458,6 +529,7 @@
                 <table class="data-table">
                     <thead>
                         <tr>
+                            <th style="width:40px;text-align:center;">No.</th>
                             <th>Tanggal</th>
                             <th>Keterangan / Deskripsi</th>
                             <th class="right">Nominal</th>
@@ -467,6 +539,7 @@
                     <tbody>
                         @forelse($incomes as $inc)
                             <tr>
+                                <td style="text-align:center;color:#94a3b8;">{{ $loop->iteration + (($incomes->currentPage() - 1) * $incomes->perPage()) }}</td>
                                 <td class="date-cell">{{ \Carbon\Carbon::parse($inc->income_date)->format('d/m/Y') }}</td>
                                 <td class="desc-cell">{{ $inc->description ?: '-' }}</td>
                                 <td class="amount-cell">Rp {{ number_format($inc->amount, 0, ',', '.') }}</td>
@@ -479,13 +552,13 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     <div class="empty-state">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" style="width:44px;height:44px">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
                                         </svg>
-                                        <h4>Belum ada data pemasukan Es Teguk</h4>
-                                        <p>Gunakan form di sebelah kiri untuk menambahkan pemasukan baru</p>
+                                        <h4>Belum ada data pemasukan Es Teguk untuk periode ini</h4>
+                                        <p>Ubah filter tanggal atau tambahkan pemasukan baru</p>
                                     </div>
                                 </td>
                             </tr>
@@ -496,7 +569,7 @@
 
             @if($incomes->hasPages())
                 <div class="pagination-wrap">
-                    {{ $incomes->links() }}
+                    {{ $incomes->appends(request()->query())->links() }}
                 </div>
             @endif
         </div>
@@ -505,11 +578,19 @@
 </div>
 
 <script>
+    function getFilterParams() {
+        var sd = document.querySelector('input[name="start_date"]').value;
+        var ed = document.querySelector('input[name="end_date"]').value;
+        var params = '';
+        if (sd) params += '&start_date=' + sd;
+        if (ed) params += '&end_date=' + ed;
+        return params;
+    }
     function exportPreview() {
-        window.open('{{ route('keuangan.es_teguk') }}?export=preview', '_blank');
+        window.open('{{ route('keuangan.es_teguk') }}?export=preview' + getFilterParams(), '_blank');
     }
     function exportExcel() {
-        window.open('{{ route('keuangan.es_teguk') }}?export=excel', '_blank');
+        window.open('{{ route('keuangan.es_teguk') }}?export=excel' + getFilterParams(), '_blank');
     }
 </script>
 @endsection

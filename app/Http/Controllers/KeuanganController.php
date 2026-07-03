@@ -461,7 +461,7 @@ class KeuanganController extends Controller
 
         // Handle Excel export & preview
         if (in_array($request->export, ['excel', 'preview'])) {
-            $transactions = $query->orderBy('created_at', 'desc')->get();
+            $transactions = $query->orderBy('created_at', 'asc')->get();
             if ($request->export === 'preview') {
                 $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
                 return view('keuangan.reports_preview', compact(
@@ -480,7 +480,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $transactions = $query->orderBy('created_at', 'desc')->paginate(15);
+        $transactions = $query->orderBy('created_at', 'asc')->paginate(15);
 
         return view('keuangan.reports', compact(
             'transactions', 'cashiers', 'startDate', 'endDate',
@@ -511,33 +511,37 @@ class KeuanganController extends Controller
     {
         $query = EsTegukIncome::with('user');
 
-        // Total pemasukan bulan ini
-        $totalIncomeThisMonth = EsTegukIncome::whereMonth('income_date', Carbon::now()->month)
-            ->whereYear('income_date', Carbon::now()->year)
-            ->sum('amount');
+        // Filter rentang tanggal (default: bulan ini)
+        $startDate = $request->filled('start_date') ? Carbon::parse($request->start_date)->startOfDay() : Carbon::now()->startOfMonth();
+        $endDate = $request->filled('end_date') ? Carbon::parse($request->end_date)->endOfDay() : Carbon::now()->endOfDay();
+
+        $query->whereBetween('income_date', [$startDate->toDateString(), $endDate->toDateString()]);
+
+        // Total pemasukan sesuai filter
+        $totalIncomeThisMonth = (clone $query)->sum('amount');
 
         // Handle Excel export & preview
         if (in_array($request->export, ['excel', 'preview'])) {
-            $incomes = $query->orderBy('income_date', 'desc')->get();
+            $incomes = $query->orderBy('income_date', 'asc')->get();
             if ($request->export === 'preview') {
                 $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
                 return view('keuangan.es_teguk_preview', compact(
-                    'incomes', 'totalIncomeThisMonth', 'excelUrl'
+                    'incomes', 'totalIncomeThisMonth', 'excelUrl', 'startDate', 'endDate'
                 ));
             }
-            $filename = 'laporan-pemasukan-es-teguk-' . Carbon::now()->format('Ymd') . '.xls';
+            $filename = 'laporan-pemasukan-es-teguk-' . $startDate->format('Ymd') . '-sd-' . $endDate->format('Ymd') . '.xls';
 
             return response()->view('keuangan.es_teguk_excel', compact(
-                'incomes', 'totalIncomeThisMonth'
+                'incomes', 'totalIncomeThisMonth', 'startDate', 'endDate'
             ))
             ->header('Content-Type', 'application/vnd.ms-excel; charset=utf-8')
             ->header('Content-Disposition', 'attachment; filename="' . $filename . '"')
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $incomes = $query->orderBy('income_date', 'desc')->paginate(10);
+        $incomes = $query->orderBy('income_date', 'asc')->paginate(10);
 
-        return view('keuangan.es_teguk', compact('incomes', 'totalIncomeThisMonth'));
+        return view('keuangan.es_teguk', compact('incomes', 'totalIncomeThisMonth', 'startDate', 'endDate'));
     }
 
     /**

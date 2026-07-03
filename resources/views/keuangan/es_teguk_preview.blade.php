@@ -308,7 +308,7 @@
                     <h2>LAPORAN PEMASUKAN ES TEGUK</h2>
                     <h3>{{ \App\Models\Setting::getValue('shop_name', 'BAUNTUNGPOS') }} — {{ \App\Models\Setting::getValue('shop_subtitle', 'TOKO PLASTIK & SEMBAKO') }}</h3>
                     <p>{{ \App\Models\Setting::getValue('shop_address', 'Jl. Panglima Batur, Komet, Banjarbaru') }}</p>
-                    <p>Bulan: {{ \Carbon\Carbon::now()->translatedFormat('F Y') }} &nbsp;·&nbsp; Dicetak: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WITA</p>
+                    <p>Periode: {{ $startDate->translatedFormat('d F Y') }} s/d {{ $endDate->translatedFormat('d F Y') }} &nbsp;·&nbsp; Dicetak: {{ \Carbon\Carbon::now()->isoFormat('D MMMM YYYY, H:mm') }} WITA</p>
                 </div>
 
                 {{-- SUMMARY CARDS --}}
@@ -319,7 +319,7 @@
                         <div class="value green">Rp {{ number_format($grandTotal, 0, ',', '.') }}</div>
                     </div>
                     <div class="summary-card">
-                        <div class="label">Total Pemasukan Bulan Ini</div>
+                        <div class="label">Total Pemasukan Periode Ini</div>
                         <div class="value blue">Rp {{ number_format($totalIncomeThisMonth, 0, ',', '.') }}</div>
                     </div>
                     <div class="summary-card">
