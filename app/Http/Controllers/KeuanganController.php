@@ -429,35 +429,34 @@ class KeuanganController extends Controller
         $startDate = $request->filled('start_date') ? Carbon::parse($request->start_date)->startOfDay() : Carbon::now()->subDays(30)->startOfDay();
         $endDate = $request->filled('end_date') ? Carbon::parse($request->end_date)->endOfDay() : Carbon::now()->endOfDay();
 
-        $userFilterSql = '';
+        // 1. Ambil data quantity per tanggal
+        $qtyQuery = DB::table('transaction_details')
+            ->join('transactions', 'transaction_details.transaction_id', '=', 'transactions.id')
+            ->select(
+                DB::raw('DATE(transactions.created_at) as date'),
+                DB::raw('SUM(transaction_details.qty) as total_qty')
+            )
+            ->whereBetween('transactions.created_at', [$startDate, $endDate]);
+
         if ($request->filled('user_ids') && is_array($request->user_ids)) {
-            $ids = implode(',', array_map('intval', $request->user_ids));
-            if ($ids !== '') {
-                $userFilterSql = " AND t.user_id IN ($ids)";
-            }
+            $qtyQuery->whereIn('transactions.user_id', $request->user_ids);
         }
-
-        $pmFilterSql = '';
         if ($request->filled('payment_method')) {
-            $pm = DB::connection()->getPdo()->quote($request->payment_method);
-            $pmFilterSql = " AND t.payment_method = $pm";
+            $qtyQuery->where('transactions.payment_method', $request->payment_method);
         }
 
+        $qtyMap = $qtyQuery->groupBy(DB::raw('DATE(transactions.created_at)'))
+            ->pluck('total_qty', 'date')
+            ->all();
+
+        // 2. Query utama transaksi harian
         $query = Transaction::select(
             DB::raw('DATE(created_at) as date'),
             DB::raw('SUM(subtotal) as total_subtotal'),
             DB::raw('SUM(discount) as total_discount'),
             DB::raw('SUM(grand_total) as total_grand_total'),
             DB::raw('SUM(CASE WHEN payment_method = "cash" THEN grand_total ELSE 0 END) as total_cash'),
-            DB::raw('SUM(CASE WHEN payment_method = "qris" THEN grand_total ELSE 0 END) as total_qris'),
-            DB::raw("(
-                SELECT SUM(td.qty) 
-                FROM transaction_details td 
-                JOIN transactions t ON td.transaction_id = t.id 
-                WHERE DATE(t.created_at) = DATE(transactions.created_at)
-                $userFilterSql
-                $pmFilterSql
-            ) as total_qty")
+            DB::raw('SUM(CASE WHEN payment_method = "qris" THEN grand_total ELSE 0 END) as total_qris')
         )
         ->whereBetween('created_at', [$startDate, $endDate]);
 
@@ -492,6 +491,12 @@ class KeuanganController extends Controller
         // Handle Excel export & preview
         if (in_array($request->export, ['excel', 'preview'])) {
             $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->get();
+            
+            // Map total_qty ke collection
+            $transactions->each(function ($item) use ($qtyMap) {
+                $item->total_qty = $qtyMap[$item->date] ?? 0;
+            });
+
             if ($request->export === 'preview') {
                 $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
                 return view('keuangan.reports_preview', compact(
@@ -511,6 +516,11 @@ class KeuanganController extends Controller
         }
 
         $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->paginate(15);
+
+        // Map total_qty ke paginator
+        $transactions->each(function ($item) use ($qtyMap) {
+            $item->total_qty = $qtyMap[$item->date] ?? 0;
+        });
 
         return view('keuangan.reports', compact(
             'transactions', 'cashiers', 'startDate', 'endDate',
