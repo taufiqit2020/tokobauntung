@@ -305,6 +305,9 @@
             {{-- HEADER --}}
             <div>
                 <div class="report-header">
+                    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+                        <img src="{{ asset('images/shop-logo.png') }}" alt="Logo Bauntung" style="height: 96px; width: auto; object-fit: contain;">
+                    </div>
                     <h2>LAPORAN PEMASUKAN ES TEGUK</h2>
                     <h3>{{ \App\Models\Setting::getValue('shop_name', 'BAUNTUNGPOS') }} — {{ \App\Models\Setting::getValue('shop_subtitle', 'TOKO PLASTIK & SEMBAKO') }}</h3>
                     <p>{{ \App\Models\Setting::getValue('shop_address', 'Jl. Panglima Batur, Komet, Banjarbaru') }}</p>

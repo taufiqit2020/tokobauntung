@@ -75,7 +75,10 @@
         <div class="print-card w-full max-w-[210mm] min-h-[297mm] p-10 sm:p-12 mx-auto bg-white border border-slate-200 shadow-lg rounded-2xl flex flex-col justify-between">
             <div class="space-y-6">
                 <!-- Header Laporan -->
-                <div class="text-center space-y-1 pb-4 border-b-2 border-slate-900">
+                <div class="text-center space-y-2 pb-4 border-b-2 border-slate-900">
+                    <div class="flex justify-center mb-3">
+                        <img src="{{ asset('images/shop-logo.png') }}" alt="Logo Bauntung" class="h-24 w-auto object-contain">
+                    </div>
                     <h2 class="text-xl font-bold uppercase text-slate-900 tracking-wide">@yield('report_title')</h2>
                     <h3 class="text-sm font-semibold uppercase text-slate-700">{{ \App\Models\Setting::getValue('shop_name', 'BAUNTUNGPOS') }} - {{ \App\Models\Setting::getValue('shop_subtitle', 'TOKO PLASTIK & SEMBAKO') }}</h3>
                     <p class="text-xs text-slate-500 font-medium">{{ \App\Models\Setting::getValue('shop_address', 'Jl. Panglima Batur, Komet, Banjarbaru') }}</p>
