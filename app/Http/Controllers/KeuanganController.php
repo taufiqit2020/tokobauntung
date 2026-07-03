@@ -425,13 +425,41 @@ class KeuanganController extends Controller
      */
     public function reports(Request $request)
     {
-        $query = Transaction::with(['user', 'shift']);
-
         // Filter rentang tanggal (default: 30 hari terakhir)
-        $startDate = $request->filled('start_date') ? Carbon::parse($request->start_date) : Carbon::now()->subDays(30);
+        $startDate = $request->filled('start_date') ? Carbon::parse($request->start_date)->startOfDay() : Carbon::now()->subDays(30)->startOfDay();
         $endDate = $request->filled('end_date') ? Carbon::parse($request->end_date)->endOfDay() : Carbon::now()->endOfDay();
 
-        $query->whereBetween('created_at', [$startDate, $endDate]);
+        $userFilterSql = '';
+        if ($request->filled('user_ids') && is_array($request->user_ids)) {
+            $ids = implode(',', array_map('intval', $request->user_ids));
+            if ($ids !== '') {
+                $userFilterSql = " AND t.user_id IN ($ids)";
+            }
+        }
+
+        $pmFilterSql = '';
+        if ($request->filled('payment_method')) {
+            $pm = DB::connection()->getPdo()->quote($request->payment_method);
+            $pmFilterSql = " AND t.payment_method = $pm";
+        }
+
+        $query = Transaction::select(
+            DB::raw('DATE(created_at) as date'),
+            DB::raw('SUM(subtotal) as total_subtotal'),
+            DB::raw('SUM(discount) as total_discount'),
+            DB::raw('SUM(grand_total) as total_grand_total'),
+            DB::raw('SUM(CASE WHEN payment_method = "cash" THEN grand_total ELSE 0 END) as total_cash'),
+            DB::raw('SUM(CASE WHEN payment_method = "qris" THEN grand_total ELSE 0 END) as total_qris'),
+            DB::raw("(
+                SELECT SUM(td.qty) 
+                FROM transaction_details td 
+                JOIN transactions t ON td.transaction_id = t.id 
+                WHERE DATE(t.created_at) = DATE(transactions.created_at)
+                $userFilterSql
+                $pmFilterSql
+            ) as total_qty")
+        )
+        ->whereBetween('created_at', [$startDate, $endDate]);
 
         // Filter kasir (multiple selection)
         if ($request->filled('user_ids') && is_array($request->user_ids)) {
@@ -442,6 +470,8 @@ class KeuanganController extends Controller
         if ($request->filled('payment_method')) {
             $query->where('payment_method', $request->payment_method);
         }
+
+        $query->groupBy(DB::raw('DATE(created_at)'));
 
         $cashiers = User::where('role', 'admin_kasir')->get();
 
@@ -461,7 +491,7 @@ class KeuanganController extends Controller
 
         // Handle Excel export & preview
         if (in_array($request->export, ['excel', 'preview'])) {
-            $transactions = $query->orderBy('created_at', 'asc')->get();
+            $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->get();
             if ($request->export === 'preview') {
                 $excelUrl = $request->fullUrlWithQuery(['export' => 'excel']);
                 return view('keuangan.reports_preview', compact(
@@ -480,7 +510,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $transactions = $query->orderBy('created_at', 'asc')->paginate(15);
+        $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->paginate(15);
 
         return view('keuangan.reports', compact(
             'transactions', 'cashiers', 'startDate', 'endDate',

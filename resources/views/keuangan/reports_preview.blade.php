@@ -45,29 +45,29 @@
 
     <!-- Rincian Tabel -->
     <div>
-        <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wide mb-3 underline">Rincian Transaksi Penjualan</h4>
+        <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wide mb-3 underline">Rincian Laporan Harian Penjualan</h4>
         <table class="w-full text-left border-collapse border border-slate-300">
             <thead>
                 <tr class="bg-slate-100 text-slate-800 font-bold uppercase">
-                    <th class="border border-slate-300 p-2 text-[10px]">No. Invoice</th>
-                    <th class="border border-slate-300 p-2 text-[10px]">Tanggal & Waktu</th>
-                    <th class="border border-slate-300 p-2 text-[10px]">Kasir</th>
-                    <th class="border border-slate-300 p-2 text-[10px]">Metode</th>
-                    <th class="border border-slate-300 p-2 text-right text-[10px]">Subtotal (Rp)</th>
-                    <th class="border border-slate-300 p-2 text-right text-[10px]">Grosir (Rp)</th>
-                    <th class="border border-slate-300 p-2 text-right text-[10px]">Total Akhir (Rp)</th>
+                    <th class="border border-slate-300 p-2 text-center text-[10px]" style="width: 40px;">No.</th>
+                    <th class="border border-slate-300 p-2 text-[10px]">Tanggal</th>
+                    <th class="border border-slate-300 p-2 text-center text-[10px]">Jumlah Barang Dibeli</th>
+                    <th class="border border-slate-300 p-2 text-right text-[10px]">Uang Tunai</th>
+                    <th class="border border-slate-300 p-2 text-right text-[10px]">QRIS</th>
+                    <th class="border border-slate-300 p-2 text-right text-[10px]">Potongan</th>
+                    <th class="border border-slate-300 p-2 text-right text-[10px]">Total Akhir (Omset)</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse($transactions as $trans)
                     <tr class="hover:bg-slate-50">
-                        <td class="border border-slate-300 p-2 text-[10px] text-slate-700 font-semibold">{{ $trans->invoice_number }}</td>
-                        <td class="border border-slate-300 p-2 text-[10px] text-slate-500">{{ \Carbon\Carbon::parse($trans->created_at)->format('d/m/Y H:i') }}</td>
-                        <td class="border border-slate-300 p-2 text-[10px] font-medium text-slate-800">{{ $trans->user->name }}</td>
-                        <td class="border border-slate-300 p-2 text-[10px] text-center uppercase font-bold text-slate-600">{{ $trans->payment_method }}</td>
-                        <td class="border border-slate-300 p-2 text-right text-[10px] font-semibold text-slate-900">{{ number_format($trans->subtotal, 0, ',', '.') }}</td>
-                        <td class="border border-slate-300 p-2 text-right text-[10px] text-rose-500">-{{ number_format($trans->discount, 0, ',', '.') }}</td>
-                        <td class="border border-slate-300 p-2 text-right text-[10px] font-bold text-indigo-700">Rp {{ number_format($trans->grand_total, 0, ',', '.') }}</td>
+                        <td class="border border-slate-300 p-2 text-center text-[10px] text-slate-400 font-bold">{{ $loop->iteration }}</td>
+                        <td class="border border-slate-300 p-2 text-[10px] text-slate-900 font-bold">{{ \Carbon\Carbon::parse($trans->date)->isoFormat('D MMMM YYYY') }}</td>
+                        <td class="border border-slate-300 p-2 text-center text-[10px] font-bold text-slate-800">{{ number_format($trans->total_qty ?? 0, 0, ',', '.') }} pcs</td>
+                        <td class="border border-slate-300 p-2 text-right text-[10px] font-semibold text-slate-700">Rp {{ number_format($trans->total_cash, 0, ',', '.') }}</td>
+                        <td class="border border-slate-300 p-2 text-right text-[10px] font-semibold text-teal-600">Rp {{ number_format($trans->total_qris, 0, ',', '.') }}</td>
+                        <td class="border border-slate-300 p-2 text-right text-[10px] text-rose-500">{{ $trans->total_discount > 0 ? 'Rp ' . number_format($trans->total_discount, 0, ',', '.') : '-' }}</td>
+                        <td class="border border-slate-300 p-2 text-right text-[10px] font-bold text-indigo-700">Rp {{ number_format($trans->total_grand_total, 0, ',', '.') }}</td>
                     </tr>
                 @empty
                     <tr>

@@ -127,36 +127,36 @@
             <td colspan="7">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="7" style="font-weight: bold; font-size: 12px; text-decoration: underline;">RINCIAN TRANSAKSI PENJUALAN</td>
+            <td colspan="7" style="font-weight: bold; font-size: 12px; text-decoration: underline;">RINCIAN LAPORAN HARIAN PENJUALAN</td>
         </tr>
         <tr>
             <td colspan="7">&nbsp;</td>
         </tr>
     </table>
 
-    <!-- 3. RINCIAN STRUK TRANSAKSI -->
+    <!-- 3. RINCIAN LAPORAN HARIAN -->
     <table cellpadding="5" style="border-collapse: collapse;">
         <thead>
             <tr>
-                <th class="table-header">No. Invoice</th>
-                <th class="table-header">Tanggal & Waktu</th>
-                <th class="table-header">Kasir</th>
-                <th class="table-header">Metode Pembayaran</th>
-                <th class="table-header">Subtotal</th>
-                <th class="table-header">Grosir</th>
-                <th class="table-header">Total Akhir</th>
+                <th class="table-header">No.</th>
+                <th class="table-header">Tanggal</th>
+                <th class="table-header">Jumlah Barang Dibeli</th>
+                <th class="table-header">Uang Tunai</th>
+                <th class="table-header">QRIS</th>
+                <th class="table-header">Potongan</th>
+                <th class="table-header">Total Akhir (Omset)</th>
             </tr>
         </thead>
         <tbody>
             @forelse($transactions as $trans)
                 <tr>
-                    <td class="text">{{ $trans->invoice_number }}</td>
-                    <td class="date">{{ \Carbon\Carbon::parse($trans->created_at)->format('Y-m-d H:i') }}</td>
-                    <td class="text">{{ $trans->user->name }}</td>
-                    <td class="text" style="text-align: center; text-transform: uppercase;">{{ $trans->payment_method }}</td>
-                    <td class="number">{{ number_format($trans->subtotal, 0, ',', '.') }}</td>
-                    <td class="number" style="color: #ef4444;">{{ number_format($trans->discount, 0, ',', '.') }}</td>
-                    <td class="number" style="font-weight: bold; color: #4f46e5;">{{ number_format($trans->grand_total, 0, ',', '.') }}</td>
+                    <td class="text" style="text-align: center;">{{ $loop->iteration }}</td>
+                    <td class="text">{{ \Carbon\Carbon::parse($trans->date)->isoFormat('D MMMM YYYY') }}</td>
+                    <td class="text" style="text-align: center; font-weight: bold;">{{ number_format($trans->total_qty ?? 0, 0, ',', '.') }} pcs</td>
+                    <td class="number">Rp {{ number_format($trans->total_cash, 0, ',', '.') }}</td>
+                    <td class="number">Rp {{ number_format($trans->total_qris, 0, ',', '.') }}</td>
+                    <td class="number" style="color: #ef4444;">{{ $trans->total_discount > 0 ? 'Rp ' . number_format($trans->total_discount, 0, ',', '.') : '-' }}</td>
+                    <td class="number" style="font-weight: bold; color: #4f46e5;">Rp {{ number_format($trans->total_grand_total, 0, ',', '.') }}</td>
                 </tr>
             @empty
                 <tr>

@@ -141,58 +141,43 @@
     <!-- Sales Table -->
     <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
         <div class="p-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">Daftar Struk Transaksi Penjualan</h3>
+            <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wide">Laporan Harian Penjualan (Ringkasan per Hari)</h3>
             <button type="button" onclick="exportExcel()" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-md transition-all active:scale-95 cursor-pointer flex items-center space-x-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z" />
                 </svg>
-                <span>Ekspor Excel</span>
+                <span>Cetak / Ekspor Laporan</span>
             </button>
         </div>
         <div class="overflow-x-auto">
             <table class="w-full text-left text-xs border-collapse">
                 <thead>
                     <tr class="bg-slate-50 border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider">
-                        <th class="p-4">No. Invoice</th>
-                        <th class="p-4">Tanggal & Waktu</th>
-                        <th class="p-4">Kasir</th>
-                        <th class="p-4 text-center">Pembayaran</th>
-                        <th class="p-4 text-right">Subtotal</th>
-                        <th class="p-4 text-right">Grosir</th>
-                        <th class="p-4 text-right">Total Akhir</th>
-                        <th class="p-4 text-center">Aksi</th>
+                        <th class="p-4 text-center" style="width: 50px;">No.</th>
+                        <th class="p-4">Tanggal</th>
+                        <th class="p-4 text-center">Jumlah Barang Dibeli</th>
+                        <th class="p-4 text-right">Uang Tunai</th>
+                        <th class="p-4 text-right">QRIS</th>
+                        <th class="p-4 text-right">Potongan</th>
+                        <th class="p-4 text-right">Total Akhir (Omset)</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 text-slate-700">
                     @forelse($transactions as $trans)
                         <tr class="hover:bg-slate-50/50 transition-all">
-                            <td class="p-4 font-bold text-slate-900 tracking-wide">{{ $trans->invoice_number }}</td>
-                            <td class="p-4 text-slate-500">{{ \Carbon\Carbon::parse($trans->created_at)->isoFormat('D MMMM YYYY, H:mm') }} WITA</td>
-                            <td class="p-4 font-semibold text-slate-700">{{ $trans->user->name }}</td>
-                            <td class="p-4 text-center">
-                                <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase {{ $trans->payment_method === 'cash' ? 'bg-slate-100 text-slate-700 border border-slate-200' : 'bg-teal-50 text-teal-700 border border-teal-100' }}">
-                                    {{ $trans->payment_method }}
-                                </span>
-                            </td>
-                            <td class="p-4 text-right font-medium text-slate-500">Rp {{ number_format($trans->subtotal, 0, ',', '.') }}</td>
+                            <td class="p-4 font-bold text-slate-400 text-center">{{ $loop->iteration + (($transactions->currentPage() - 1) * $transactions->perPage()) }}</td>
+                            <td class="p-4 font-bold text-slate-900 tracking-wide">{{ \Carbon\Carbon::parse($trans->date)->isoFormat('D MMMM YYYY') }}</td>
+                            <td class="p-4 text-center font-bold text-slate-700">{{ number_format($trans->total_qty ?? 0, 0, ',', '.') }} pcs</td>
+                            <td class="p-4 text-right font-medium text-slate-800">Rp {{ number_format($trans->total_cash, 0, ',', '.') }}</td>
+                            <td class="p-4 text-right font-medium text-teal-600">Rp {{ number_format($trans->total_qris, 0, ',', '.') }}</td>
                             <td class="p-4 text-right font-medium text-rose-500">
-                                {{ $trans->discount > 0 ? 'Rp ' . number_format($trans->discount, 0, ',', '.') : '-' }}
+                                {{ $trans->total_discount > 0 ? 'Rp ' . number_format($trans->total_discount, 0, ',', '.') : '-' }}
                             </td>
-                            <td class="p-4 text-right font-extrabold text-indigo-600 text-sm">Rp {{ number_format($trans->grand_total, 0, ',', '.') }}</td>
-                            <td class="p-4 text-center">
-                                <a href="{{ route('keuangan.reports.print', $trans->id) }}"
-                                   class="inline-flex items-center space-x-1 py-1 px-2.5 bg-indigo-50 border border-indigo-200 hover:border-indigo-500 hover:text-indigo-600 rounded-lg text-indigo-700 font-bold transition-all text-[10px]"
-                                   title="Cetak Struk">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.821V21h10.56v-7.179M9 3.75h6M18 10.5h.008v.008H18V10.5Zm-1.8 1.35H7.8M6 6.75h12v6H6v-6Z" />
-                                    </svg>
-                                    <span>Cetak</span>
-                                </a>
-                            </td>
+                            <td class="p-4 text-right font-extrabold text-indigo-600 text-sm">Rp {{ number_format($trans->total_grand_total, 0, ',', '.') }}</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="p-8 text-center text-slate-400 font-medium">Tidak ada data penjualan untuk periode filter ini.</td>
+                            <td colspan="7" class="p-8 text-center text-slate-400 font-medium">Tidak ada data penjualan untuk periode filter ini.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -201,7 +186,7 @@
 
         @if($transactions->hasPages())
             <div class="p-4 border-t border-slate-100 bg-slate-50">
-                {{ $transactions->links() }}
+                {{ $transactions->appends(request()->query())->links() }}
             </div>
         @endif
     </div>
