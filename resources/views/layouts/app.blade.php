@@ -14,6 +14,7 @@
             font-family: 'Outfit', sans-serif;
         }
     </style>
+    @stack('styles')
 </head>
 <body class="bg-slate-50 text-slate-800 flex h-screen overflow-hidden">
 
