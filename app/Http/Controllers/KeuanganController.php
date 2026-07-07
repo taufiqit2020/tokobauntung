@@ -210,6 +210,246 @@ class KeuanganController extends Controller
     }
 
     /**
+     * Ekspor seluruh produk ke file Excel (.xls).
+     */
+    public function exportProducts()
+    {
+        $products = Product::with('category')->orderBy('name', 'asc')->get();
+        $filename = 'katalog-produk-stok-' . Carbon::now()->format('Ymd') . '.xls';
+
+        return response()->view('keuangan.products_excel', compact('products'))
+            ->header('Content-Type', 'application/vnd.ms-excel; charset=utf-8')
+            ->header('Content-Disposition', 'attachment; filename="' . $filename . '"')
+            ->header('Cache-Control', 'max-age=0');
+    }
+
+    /**
+     * Download template impor produk (.csv).
+     */
+    public function downloadTemplateProducts()
+    {
+        $headers = [
+            'Content-Type' => 'text/csv; charset=utf-8',
+            'Content-Disposition' => 'attachment; filename="template_impor_produk.csv"',
+            'Cache-Control' => 'max-age=0',
+        ];
+
+        $callback = function() {
+            $file = fopen('php://output', 'w');
+            // Write BOM for UTF-8 Excel support
+            fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
+            
+            // Header
+            fputcsv($file, [
+                'KODE BARANG',
+                'NAMA PRODUK',
+                'KATEGORI',
+                'SATUAN',
+                'HARGA MODAL',
+                'HARGA JUAL',
+                'HARGA GROSIR',
+                'MIN BELI GROSIR',
+                'STOK',
+                'STOK MINIMUM'
+            ], ',');
+
+            // Contoh data
+            fputcsv($file, [
+                'BRG-001',
+                'Minyak Goreng Bimoli 1L',
+                'SEMBAKO',
+                'pcs',
+                '18000',
+                '20000',
+                '19500',
+                '12',
+                '50',
+                '5'
+            ], ',');
+
+            fputcsv($file, [
+                'BRG-002',
+                'Kantong Plastik 15x30',
+                'PLASTIK',
+                'pack',
+                '8000',
+                '10000',
+                '',
+                '',
+                '100',
+                '10'
+            ], ',');
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
+    /**
+     * Impor produk dari file Excel (format CSV).
+     */
+    public function importProducts(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|file|mimes:csv,txt'
+        ]);
+
+        $file = $request->file('file');
+        $filePath = $file->getRealPath();
+
+        // Deteksi delimiter
+        $handle = fopen($filePath, 'r');
+        $firstLine = fgets($handle);
+        
+        $delimiter = ',';
+        if (substr_count($firstLine, ';') > substr_count($firstLine, ',')) {
+            $delimiter = ';';
+        }
+        
+        rewind($handle);
+        
+        // Skip UTF-8 BOM jika ada
+        $bom = fread($handle, 3);
+        if ($bom !== "\xEF\xBB\xBF") {
+            rewind($handle);
+        }
+
+        // Baca header
+        $header = fgetcsv($handle, 0, $delimiter);
+        if (!$header || count($header) < 6) {
+            fclose($handle);
+            return redirect()->back()->withErrors(['error' => 'Format file template CSV tidak sesuai. Pastikan kolom sesuai template.']);
+        }
+
+        $importedCount = 0;
+        $updatedCount = 0;
+        $errors = [];
+        $rowNum = 1;
+
+        DB::beginTransaction();
+        try {
+            while (($row = fgetcsv($handle, 0, $delimiter)) !== false) {
+                $rowNum++;
+                
+                // Lewati baris kosong
+                if (empty(array_filter($row))) {
+                    continue;
+                }
+
+                // Cocokkan jumlah kolom
+                if (count($row) < count($header)) {
+                    $row = array_pad($row, count($header), '');
+                }
+
+                // Mapping kolom
+                $code = strtoupper(trim($row[0]));
+                $name = trim($row[1]);
+                $categoryName = trim($row[2]);
+                $unit = trim($row[3]);
+                $buyPrice = floatval(str_replace(['.', ','], ['', '.'], $row[4]));
+                $sellPrice = floatval(str_replace(['.', ','], ['', '.'], $row[5]));
+                $wholesalePrice = isset($row[6]) && trim($row[6]) !== '' ? floatval(str_replace(['.', ','], ['', '.'], $row[6])) : null;
+                $wholesaleMinQty = isset($row[7]) && trim($row[7]) !== '' ? intval($row[7]) : null;
+                $stock = isset($row[8]) && trim($row[8]) !== '' ? intval($row[8]) : 0;
+                $minStock = isset($row[9]) && trim($row[9]) !== '' ? intval($row[9]) : 5;
+
+                if (empty($code) || empty($name) || empty($categoryName) || empty($unit)) {
+                    $errors[] = "Baris {$rowNum}: Kode Barang, Nama Produk, Kategori, dan Satuan wajib diisi.";
+                    continue;
+                }
+
+                // Cari atau buat Kategori baru
+                $category = Category::where('name', 'like', $categoryName)->first();
+                if (!$category) {
+                    $category = Category::create([
+                        'name' => strtoupper($categoryName),
+                        'description' => 'Kategori dibuat otomatis via impor produk'
+                    ]);
+                }
+
+                // Cari produk berdasarkan Kode Barang
+                $product = Product::where('product_code', $code)->first();
+                if ($product) {
+                    // Update produk yang ada
+                    $oldStock = $product->stock;
+                    
+                    $product->update([
+                        'name' => $name,
+                        'category_id' => $category->id,
+                        'unit' => $unit,
+                        'buy_price' => $buyPrice,
+                        'sell_price' => $sellPrice,
+                        'wholesale_price' => $wholesalePrice,
+                        'wholesale_min_qty' => $wholesaleMinQty,
+                        'stock' => $stock,
+                        'min_stock' => $minStock,
+                        'is_active' => true,
+                    ]);
+
+                    // Log perubahan stok jika ada penyesuaian stok baru
+                    if ($oldStock != $stock) {
+                        $qtyChange = $stock - $oldStock;
+                        StockLog::create([
+                            'product_id' => $product->id,
+                            'type' => $qtyChange > 0 ? 'adjustment_plus' : 'adjustment_minus',
+                            'qty_change' => $qtyChange,
+                            'current_stock' => $stock,
+                            'reason' => 'Penyesuaian Stok via Impor Excel/CSV',
+                            'user_id' => Auth::id(),
+                        ]);
+                    }
+
+                    $updatedCount++;
+                } else {
+                    // Buat produk baru
+                    $product = Product::create([
+                        'product_code' => $code,
+                        'name' => $name,
+                        'category_id' => $category->id,
+                        'unit' => $unit,
+                        'buy_price' => $buyPrice,
+                        'sell_price' => $sellPrice,
+                        'wholesale_price' => $wholesalePrice,
+                        'wholesale_min_qty' => $wholesaleMinQty,
+                        'stock' => $stock,
+                        'min_stock' => $minStock,
+                        'is_active' => true,
+                    ]);
+
+                    // Log stok awal
+                    StockLog::create([
+                        'product_id' => $product->id,
+                        'type' => 'intake',
+                        'qty_change' => $stock,
+                        'current_stock' => $stock,
+                        'reason' => 'Stok Awal via Impor Excel/CSV',
+                        'user_id' => Auth::id(),
+                    ]);
+
+                    $importedCount++;
+                }
+            }
+            fclose($handle);
+            DB::commit();
+        } catch (\Exception $e) {
+            fclose($handle);
+            DB::rollBack();
+            return redirect()->back()->withErrors(['error' => 'Gagal mengimpor file: ' . $e->getMessage()]);
+        }
+
+        $msg = "Impor data produk selesai.";
+        if ($importedCount > 0) $msg .= " {$importedCount} produk baru ditambahkan.";
+        if ($updatedCount > 0) $msg .= " {$updatedCount} data produk diperbarui.";
+        
+        if (count($errors) > 0) {
+            return redirect()->route('keuangan.products')->with('success', $msg)->withErrors($errors);
+        }
+
+        return redirect()->route('keuangan.products')->with('success', $msg);
+    }
+
+    /**
      * Manajemen Kategori Barang: Daftar & CRUD Kategori.
      */
     public function categories(Request $request)

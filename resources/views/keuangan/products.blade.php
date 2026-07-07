@@ -46,14 +46,35 @@
             </div>
         </form>
 
-        <!-- Add Product Button -->
-        <button onclick="openAddProductModal()"
-                class="py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-600/10 flex items-center justify-center space-x-1.5 cursor-pointer transition-all active:scale-95">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-            <span>Tambah Barang Baru</span>
-        </button>
+        <!-- Buttons Group -->
+        <div class="flex items-center gap-2">
+            <!-- Export Button -->
+            <a href="{{ route('keuangan.products.export') }}"
+               class="py-2.5 px-3.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-600/10 flex items-center justify-center space-x-1.5 cursor-pointer transition-all active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z" />
+                </svg>
+                <span>Ekspor</span>
+            </a>
+
+            <!-- Import Button -->
+            <button onclick="openImportModal()"
+                    class="py-2.5 px-3.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl shadow-md shadow-amber-600/10 flex items-center justify-center space-x-1.5 cursor-pointer transition-all active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                </svg>
+                <span>Impor</span>
+            </button>
+
+            <!-- Add Product Button -->
+            <button onclick="openAddProductModal()"
+                    class="py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-600/10 flex items-center justify-center space-x-1.5 cursor-pointer transition-all active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                <span>Tambah Barang</span>
+            </button>
+        </div>
     </div>
 
     <!-- Products Table Card -->
@@ -363,6 +384,60 @@
     </div>
 </div>
 
+<!-- MODAL: Import Products -->
+<div id="import-product-modal" class="fixed inset-0 bg-slate-950/80 justify-center items-center z-50 p-4 hidden">
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 max-w-md w-full shadow-2xl overflow-y-auto max-h-[90%] no-scrollbar">
+        <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+            <h3 class="font-bold text-slate-800 text-sm uppercase">Impor Produk & Stok</h3>
+            <button onclick="closeImportModal()" class="text-slate-400 hover:text-slate-600 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <form action="{{ route('keuangan.products.import') }}" method="POST" enctype="multipart/form-data" class="space-y-5 text-xs">
+            @csrf
+            
+            <div class="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-3.5 space-y-2">
+                <p class="font-bold">⚠️ Petunjuk Penting Impor:</p>
+                <ul class="list-disc pl-5 space-y-1.5 text-[11px] leading-relaxed">
+                    <li>Gunakan template CSV resmi yang disediakan di bawah.</li>
+                    <li>Sistem mencocokkan barang berdasarkan <strong>KODE BARANG</strong>.</li>
+                    <li>Jika kode barang sudah ada, data produk & stok akan <strong>diperbarui (update)</strong>.</li>
+                    <li>Jika nama kategori baru diisi, sistem otomatis membuat kategori baru.</li>
+                    <li>Simpan Excel Anda dalam format <strong>CSV (Comma Delimited)</strong> sebelum diunggah.</li>
+                </ul>
+            </div>
+
+            <div>
+                <label class="block text-slate-500 font-bold mb-2">Pilih File CSV</label>
+                <input type="file" name="file" required accept=".csv,.txt"
+                       class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500">
+            </div>
+
+            <div class="flex flex-col gap-2 pt-2 border-t border-slate-100">
+                <!-- Download Template Button -->
+                <a href="{{ route('keuangan.products.template') }}"
+                   class="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-all cursor-pointer text-center block">
+                    📥 Download Template Impor (CSV)
+                </a>
+                
+                <div class="flex space-x-3 mt-2">
+                    <button type="button" onclick="closeImportModal()"
+                            class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl transition-all cursor-pointer text-center">
+                        Batal
+                    </button>
+                    <button type="submit"
+                            class="flex-1 py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl transition-all active:scale-95 shadow-md cursor-pointer text-center">
+                        Mulai Impor
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <script>
     // Add product modals trigger
     function openAddProductModal() {
@@ -370,6 +445,14 @@
     }
     function closeAddProductModal() {
         document.getElementById('add-product-modal').style.display = 'none';
+    }
+
+    // Import product modals trigger
+    function openImportModal() {
+        document.getElementById('import-product-modal').style.display = 'flex';
+    }
+    function closeImportModal() {
+        document.getElementById('import-product-modal').style.display = 'none';
     }
 
     // Edit product modals trigger
