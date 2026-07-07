@@ -108,7 +108,7 @@ class KeuanganController extends Controller
             $query->where('stock', '<=', DB::raw('min_stock'));
         }
 
-        $products = $query->orderBy('name', 'asc')->paginate(10);
+        $products = $query->orderBy('name', 'asc')->paginate(10)->withQueryString();
         $categories = Category::all();
 
         return view('keuangan.products', compact('products', 'categories'));
@@ -461,7 +461,7 @@ class KeuanganController extends Controller
             $query->where('name', 'like', "%{$request->search}%");
         }
 
-        $categories = $query->orderBy('name', 'asc')->paginate(10);
+        $categories = $query->orderBy('name', 'asc')->paginate(10)->withQueryString();
 
         return view('keuangan.categories', compact('categories'));
     }
@@ -548,7 +548,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $opnameLogs = $query->paginate(15);
+        $opnameLogs = $query->paginate(15)->withQueryString();
 
         return view('keuangan.stock_opname', compact('products', 'opnameLogs'));
     }
@@ -632,7 +632,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $expenses = $query->orderBy('expense_date', 'desc')->paginate(10);
+        $expenses = $query->orderBy('expense_date', 'desc')->paginate(10)->withQueryString();
 
         return view('keuangan.expenses', compact('expenses', 'categories', 'totalExpenseThisMonth'));
     }
@@ -755,7 +755,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->paginate(15);
+        $transactions = $query->orderBy(DB::raw('DATE(created_at)'), 'asc')->paginate(15)->withQueryString();
 
         // Map total_qty ke paginator
         $transactions->each(function ($item) use ($qtyMap) {
@@ -819,7 +819,7 @@ class KeuanganController extends Controller
             ->header('Cache-Control', 'max-age=0');
         }
 
-        $incomes = $query->orderBy('income_date', 'asc')->paginate(10);
+        $incomes = $query->orderBy('income_date', 'asc')->paginate(10)->withQueryString();
 
         return view('keuangan.es_teguk', compact('incomes', 'totalIncomeThisMonth', 'startDate', 'endDate'));
     }
