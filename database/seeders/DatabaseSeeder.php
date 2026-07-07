@@ -5625,5 +5625,9 @@ class DatabaseSeeder extends Seeder
         Setting::setValue('shop_address', 'Jl. Panglima Batur, Komet, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714');
         Setting::setValue('shop_phone', '081230100395');
         Setting::setValue('shop_receipt_footer', "Terimakasih atas Kunjungan Anda\nBarang yang sudah dibeli\ntidak dapat ditukar/dikembalikan");
+
+        // 5. Clean up and group products into the 7 standard categories
+        $this->command->info('Running products:clean to align categories and codes...');
+        \Illuminate\Support\Facades\Artisan::call('products:clean');
     }
 }
