@@ -115,6 +115,61 @@ class KeuanganController extends Controller
     }
 
     /**
+     * Mengambil kode barang berikutnya secara otomatis berdasarkan kategori.
+     */
+    public function getNextProductCode(Request $request)
+    {
+        $categoryId = $request->query('category_id');
+        if (!$categoryId) {
+            return response()->json(['code' => '']);
+        }
+
+        $category = Category::find($categoryId);
+        if (!$category) {
+            return response()->json(['code' => '']);
+        }
+
+        // Tentukan prefix berdasarkan nama kategori
+        $categoryName = strtoupper($category->name);
+        $prefixes = [
+            'PLASTIK' => 'PLS',
+            'SEMBAKO' => 'SMB',
+            'ATK' => 'ATK',
+            'ROKOK' => 'RK',
+            'SNACK' => 'SNC',
+            'KEBERSIHAN' => 'KBS',
+            'MINUMAN' => 'MNM'
+        ];
+
+        $prefix = $prefixes[$categoryName] ?? substr(str_replace(' ', '', $categoryName), 0, 3);
+        $prefix = strtoupper($prefix);
+
+        // Cari kode produk terakhir yang menggunakan format prefix ini
+        $latestProduct = Product::where('category_id', $category->id)
+            ->where('product_code', 'like', $prefix . ' %')
+            ->get()
+            ->filter(function($p) use ($prefix) {
+                $parts = explode(' ', $p->product_code);
+                return count($parts) === 2 && $parts[0] === $prefix && is_numeric($parts[1]);
+            })
+            ->sortByDesc(function($p) {
+                $parts = explode(' ', $p->product_code);
+                return (int)$parts[1];
+            })
+            ->first();
+
+        $nextNumber = 1;
+        if ($latestProduct) {
+            $parts = explode(' ', $latestProduct->product_code);
+            $nextNumber = ((int)$parts[1]) + 1;
+        }
+
+        $nextCode = $prefix . ' ' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+
+        return response()->json(['code' => $nextCode]);
+    }
+
+    /**
      * Menyimpan produk baru.
      */
     public function storeProduct(Request $request)

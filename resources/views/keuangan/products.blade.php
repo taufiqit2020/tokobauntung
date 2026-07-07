@@ -190,9 +190,9 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-slate-500 font-bold mb-1.5">KODE BARANG (Product Code)</label>
-                    <input type="text" name="product_code" required
+                    <input type="text" name="product_code" id="add-product-code" required
                            class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold"
-                           placeholder="Contoh: PL-001">
+                           placeholder="Contoh: PLS 001">
                 </div>
                 <div>
                     <label class="block text-slate-500 font-bold mb-1.5">NAMA PRODUK</label>
@@ -205,7 +205,7 @@
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label class="block text-slate-500 font-bold mb-1.5">KATEGORI</label>
-                    <select name="category_id" required
+                    <select name="category_id" id="add-category-id" onchange="fetchNextProductCode(this.value)" required
                             class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         <option value="">Pilih Kategori</option>
                         @foreach($categories as $cat)
@@ -441,10 +441,37 @@
 <script>
     // Add product modals trigger
     function openAddProductModal() {
+        document.getElementById('add-product-code').value = '';
+        document.getElementById('add-category-id').value = '';
         document.getElementById('add-product-modal').style.display = 'flex';
     }
     function closeAddProductModal() {
         document.getElementById('add-product-modal').style.display = 'none';
+    }
+
+    // Ambil kode produk berikutnya via AJAX ketika kategori dipilih
+    function fetchNextProductCode(categoryId) {
+        const codeInput = document.getElementById('add-product-code');
+        if (!categoryId) {
+            codeInput.value = '';
+            return;
+        }
+
+        codeInput.value = 'MENCARI KODE...';
+
+        fetch(`/keuangan/products/next-code?category_id=${categoryId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.code) {
+                    codeInput.value = data.code;
+                } else {
+                    codeInput.value = '';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching next product code:', error);
+                codeInput.value = '';
+            });
     }
 
     // Import product modals trigger

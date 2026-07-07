@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
         
         // Products CRUD
         Route::get('/products', [KeuanganController::class, 'products'])->name('products');
+        Route::get('/products/next-code', [KeuanganController::class, 'getNextProductCode'])->name('products.next_code');
         Route::get('/products/export', [KeuanganController::class, 'exportProducts'])->name('products.export');
         Route::get('/products/template', [KeuanganController::class, 'downloadTemplateProducts'])->name('products.template');
         Route::post('/products/import', [KeuanganController::class, 'importProducts'])->name('products.import');
