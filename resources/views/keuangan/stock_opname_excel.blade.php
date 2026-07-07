@@ -123,7 +123,7 @@
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>
-            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Hj. NORMAULIDA, S.H.</td>
+            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Hj. NOR MAULIDA, S.H.</td>
             <td>&nbsp;</td>
             <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Siti Kamariah, S.Pd.</td>
         </tr>

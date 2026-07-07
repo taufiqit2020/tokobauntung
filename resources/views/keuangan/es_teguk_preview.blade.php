@@ -375,7 +375,7 @@
                 <div class="sig-col">
                     <div class="sig-title">Mengetahui,<br>Direktur,</div>
                     <div class="sig-space"></div>
-                    <div><span class="sig-name">Hj. Normaulida, S.H.</span></div>
+                    <div><span class="sig-name">Hj. Nor Maulida, S.H.</span></div>
                 </div>
                 <div class="sig-col">
                     <div class="sig-title">Kepala Administrasi dan Keuangan,</div>

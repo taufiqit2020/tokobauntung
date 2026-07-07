@@ -97,7 +97,7 @@
                 <div class="grid grid-cols-2 text-center">
                     <div class="space-y-16">
                         <p class="font-bold uppercase tracking-wider text-slate-800">Mengetahui,<br>Direktur,</p>
-                        <p class="font-bold underline uppercase text-slate-900">Hj. Normaulida, S.H.</p>
+                        <p class="font-bold underline uppercase text-slate-900">Hj. Nor Maulida, S.H.</p>
                     </div>
                     <div class="space-y-16">
                         <p class="font-bold tracking-wider text-slate-800">Kepala Administrasi dan Keuangan,</p>

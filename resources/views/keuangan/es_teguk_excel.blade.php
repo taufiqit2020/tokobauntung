@@ -159,7 +159,7 @@
             <td colspan="4" style="height: 50px;">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Hj. NORMAULIDA, S.H.</td>
+            <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Hj. NOR MAULIDA, S.H.</td>
             <td colspan="2" style="text-align: center; font-weight: bold; text-decoration: underline;">Siti Kamariah, S.Pd.</td>
         </tr>
     </table>
