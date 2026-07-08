@@ -9,6 +9,7 @@ Artisan::command('inspire', function () {
 
 Artisan::command('products:clean', function () {
     $this->info('Starting database products & categories cleanup...');
+    \App\Models\Setting::setValue('shop_phone', '0851 6665 7171');
 
     $targetCategories = [
         'PLASTIK' => 'PLS',

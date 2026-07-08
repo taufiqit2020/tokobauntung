@@ -36,7 +36,7 @@ class Transaction extends Model
         $shopName = Setting::getValue('shop_name', 'BAUNTUNGPOS');
         $shopSub = Setting::getValue('shop_subtitle', 'TOKO PLASTIK & SEMBAKO');
         $shopAddr = Setting::getValue('shop_address', 'Jl. Panglima Batur, Komet, Banjarbaru');
-        $shopPhone = Setting::getValue('shop_phone', '081230100395');
+        $shopPhone = Setting::getValue('shop_phone', '0851 6665 7171');
         $footer = Setting::getValue('shop_receipt_footer', "Terimakasih atas Kunjungan Anda\nBarang yang sudah dibeli\ntidak dapat ditukar/dikembalikan");
         $chars = (int) Setting::getValue('printer_chars_per_line', '32');
         
