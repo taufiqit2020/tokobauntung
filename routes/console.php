@@ -280,6 +280,14 @@ Artisan::command('products:clean', function () {
             $groupedProducts[$newCatName][] = $product;
         }
 
+        // 3.5. Temporarily rename all product codes to avoid unique constraint collisions
+        $this->info('Temporarily renaming product codes to prevent unique constraint conflicts...');
+        foreach ($products as $product) {
+            $product->update([
+                'product_code' => 'TEMP-' . $product->id
+            ]);
+        }
+
         // 4. Assign new sequential codes and update products
         $totalUpdated = 0;
         foreach ($groupedProducts as $catName => $prods) {
