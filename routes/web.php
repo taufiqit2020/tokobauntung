@@ -74,6 +74,11 @@ Route::middleware(['auth'])->group(function () {
         // Financial Reports
         Route::get('/reports', [KeuanganController::class, 'reports'])->name('reports');
         Route::get('/reports/{id}/print', [KeuanganController::class, 'printReceipt'])->name('reports.print');
+
+        // Cashier Transactions List & Details
+        Route::get('/transactions', [KeuanganController::class, 'transactions'])->name('transactions');
+        Route::get('/transactions/{id}/details', [KeuanganController::class, 'getTransactionDetails'])->name('transactions.details');
+        Route::get('/transactions/{id}/print-thermal', [KeuanganController::class, 'printThermalReceipt'])->name('transactions.print_thermal');
     });
 
     // 3. Admin IT Routes

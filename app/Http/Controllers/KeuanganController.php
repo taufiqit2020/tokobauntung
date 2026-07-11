@@ -899,4 +899,68 @@ class KeuanganController extends Controller
 
         return redirect()->route('keuangan.es_teguk')->with('success', 'Pemasukan Es Teguk berhasil dicatat.');
     }
+
+    /**
+     * Daftar & Riwayat Transaksi Kasir.
+     */
+    public function transactions(Request $request)
+    {
+        // Filter rentang tanggal (default: 30 hari terakhir)
+        $startDate = $request->filled('start_date') ? Carbon::parse($request->start_date)->startOfDay() : Carbon::now()->subDays(30)->startOfDay();
+        $endDate = $request->filled('end_date') ? Carbon::parse($request->end_date)->endOfDay() : Carbon::now()->endOfDay();
+
+        $query = Transaction::with(['user', 'details.product'])
+            ->whereBetween('created_at', [$startDate, $endDate]);
+
+        // Filter kasir
+        if ($request->filled('user_id')) {
+            $query->where('user_id', $request->user_id);
+        }
+
+        // Filter metode pembayaran
+        if ($request->filled('payment_method')) {
+            $query->where('payment_method', $request->payment_method);
+        }
+
+        // Cari nomor struk
+        if ($request->filled('search')) {
+            $query->where('invoice_number', 'like', '%' . $request->search . '%');
+        }
+
+        // Hitung rekap statistik dari query yang sudah difilter
+        $statsQuery = clone $query;
+        $totalTransactions = $statsQuery->count();
+        $totalRevenue = $statsQuery->sum('grand_total');
+        $totalCash = (clone $statsQuery)->where('payment_method', 'cash')->sum('grand_total');
+        $totalQris = (clone $statsQuery)->where('payment_method', 'qris')->sum('grand_total');
+
+        // Ambil data terpaginasi
+        $transactions = $query->orderBy('created_at', 'desc')->paginate(15)->withQueryString();
+
+        // Ambil daftar kasir untuk filter dropdown
+        $cashiers = User::where('role', 'admin_kasir')->get();
+
+        return view('keuangan.transactions', compact(
+            'transactions', 'startDate', 'endDate', 'cashiers',
+            'totalTransactions', 'totalRevenue', 'totalCash', 'totalQris'
+        ));
+    }
+
+    /**
+     * Detail Transaksi Kasir (AJAX JSON).
+     */
+    public function getTransactionDetails($id)
+    {
+        $transaction = Transaction::with(['user', 'details.product'])->findOrFail($id);
+        return response()->json($transaction);
+    }
+
+    /**
+     * Tampilan pratinjau cetak struk thermal 58mm untuk browser print.
+     */
+    public function printThermalReceipt($id)
+    {
+        $transaction = Transaction::with(['user', 'details.product'])->findOrFail($id);
+        return view('keuangan.thermal_receipt', compact('transaction'));
+    }
 }
