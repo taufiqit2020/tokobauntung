@@ -94,7 +94,8 @@
             box-shadow: 0 4px 30px rgba(0,0,0,0.12);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 30px;
         }
 
         /* ============ REPORT HEADER ============ */

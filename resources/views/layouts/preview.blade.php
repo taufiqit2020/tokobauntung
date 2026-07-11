@@ -72,7 +72,7 @@
     
     <!-- Printable Paper Sheet Container -->
     <div class="print-container flex-1 p-6 sm:p-12 overflow-x-auto">
-        <div class="print-card w-full max-w-[210mm] min-h-[297mm] p-10 sm:p-12 mx-auto bg-white border border-slate-200 shadow-lg rounded-2xl flex flex-col justify-between">
+        <div class="print-card w-full max-w-[210mm] min-h-[297mm] p-10 sm:p-12 mx-auto bg-white border border-slate-200 shadow-lg rounded-2xl flex flex-col justify-start">
             <div class="space-y-6">
                 <!-- Header Laporan -->
                 <div class="text-center space-y-2 pb-4 border-b-2 border-slate-900">
