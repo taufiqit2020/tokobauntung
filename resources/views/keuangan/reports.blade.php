@@ -9,7 +9,7 @@
     <!-- Report Filters Header Card -->
     <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
         <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-4">Filter Laporan Penjualan</h3>
-        <form action="{{ route('keuangan.reports') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-semibold text-slate-500">
+        <form id="filter-form" action="{{ route('keuangan.reports') }}" method="GET" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-semibold text-slate-500">
             <!-- Start Date -->
             <div>
                 <label class="block mb-1.5 uppercase">Tanggal Mulai</label>
@@ -239,7 +239,7 @@
 
     // Export Excel function
     function exportExcel() {
-        const form = document.querySelector('form');
+        const form = document.getElementById('filter-form');
         const formData = new FormData(form);
         const params = new URLSearchParams();
 
