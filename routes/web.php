@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/shift/close', [POSController::class, 'closeShift'])->name('shift.close');
         Route::post('/transaction', [POSController::class, 'storeTransaction'])->name('transaction.store');
         Route::post('/transaction/sync', [POSController::class, 'syncOfflineTransactions'])->name('transaction.sync');
+        Route::get('/products/sync-data', [POSController::class, 'getSyncData'])->name('products.sync_data');
     });
 
     // 2. Administrasi Keuangan Routes

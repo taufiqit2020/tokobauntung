@@ -451,4 +451,25 @@ class POSController extends Controller
         if ($spaces < 1) $spaces = 1;
         return $label . str_repeat(' ', $spaces) . $value;
     }
+
+    /**
+     * Mengambil data produk dan kategori terbaru untuk disinkronkan di kasir (AJAX).
+     */
+    public function getSyncData()
+    {
+        $products = Product::where('is_active', true)->get();
+        $categories = Category::with(['products' => function ($q) {
+            $q->where('is_active', true);
+        }])->get();
+
+        $activeShift = Shift::where('user_id', \Auth::id())
+            ->whereNull('end_time')
+            ->first();
+
+        return response()->json([
+            'products' => $products,
+            'categories' => $categories,
+            'active_shift' => $activeShift ? true : false,
+        ]);
+    }
 }

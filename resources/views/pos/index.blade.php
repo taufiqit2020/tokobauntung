@@ -203,7 +203,7 @@
             </div>
 
             <!-- Category Filter Tabs -->
-            <div class="flex space-x-2 mb-4 overflow-x-auto no-scrollbar shrink-0">
+            <div id="category-tabs-container" class="flex space-x-2 mb-4 overflow-x-auto no-scrollbar shrink-0">
                 <button onclick="filterCategory('all')" id="cat-tab-all"
                         class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-indigo-600/10 shrink-0 cursor-pointer uppercase">
                     Semua
@@ -559,8 +559,8 @@
     <!-- SCRIPTS -->
     <script>
         // Global variables passed from server
-        const categoriesData = @json($categories);
-        const productsData = @json($products);
+        let categoriesData = @json($categories);
+        let productsData = @json($products);
         const shopSettings = @json($shopSettings);
         const csrfToken = '{{ csrf_token() }}';
         
@@ -570,8 +570,8 @@
         let selectedPaymentMethod = 'cash'; // 'cash' or 'qris'
         let hasActiveShift = @json($activeShift ? true : false);
 
-        // Load page
         document.addEventListener('DOMContentLoaded', () => {
+            renderCategoryTabs();
             renderProducts();
             updateCartUI();
             checkOfflineStatus();
@@ -579,6 +579,9 @@
             // Listen to connection changes
             window.addEventListener('online', syncOfflineQueue);
             window.addEventListener('offline', checkOfflineStatus);
+            
+            // Start background sync every 5 seconds
+            setInterval(syncPOSData, 5000);
             
             // Focus barcode input initially if shift is open (Disabled as requested)
             // if (hasActiveShift) {
@@ -1482,6 +1485,81 @@
             } catch (err) {
                 console.error("Error generating dynamic QRIS:", err);
             }
+        }
+
+        // Background sync function for cashier data (products, categories, shift status)
+        function syncPOSData() {
+            if (!navigator.onLine) return;
+
+            fetch('{{ route('pos.products.sync_data') }}')
+                .then(response => response.json())
+                .then(data => {
+                    hasActiveShift = data.active_shift;
+
+                    if (data.products && Array.isArray(data.products)) {
+                        const changed = JSON.stringify(data.products) !== JSON.stringify(productsData);
+                        if (changed) {
+                            productsData.length = 0;
+                            data.products.forEach(p => productsData.push(p));
+                            renderProducts();
+
+                            let cartChanged = false;
+                            cart.forEach(item => {
+                                const latestProd = productsData.find(p => p.id === item.id);
+                                if (latestProd) {
+                                    const newPrice = parseFloat(latestProd.sell_price);
+                                    if (item.sell_price !== newPrice) {
+                                        item.sell_price = newPrice;
+                                        cartChanged = true;
+                                    }
+                                    if (item.name !== latestProd.name) {
+                                        item.name = latestProd.name;
+                                        cartChanged = true;
+                                    }
+                                }
+                            });
+                            if (cartChanged) {
+                                updateCartUI();
+                            }
+                        }
+                    }
+
+                    if (data.categories && Array.isArray(data.categories)) {
+                        const changed = JSON.stringify(data.categories) !== JSON.stringify(categoriesData);
+                        if (changed) {
+                            categoriesData.length = 0;
+                            data.categories.forEach(c => categoriesData.push(c));
+                            renderCategoryTabs();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error in background data sync:', error);
+                });
+        }
+
+        function renderCategoryTabs() {
+            const container = document.getElementById('category-tabs-container');
+            if (!container) return;
+            
+            let html = `
+                <button onclick="filterCategory('all')" id="cat-tab-all"
+                        class="${currentCategoryFilter === 'all' ? 'px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-indigo-600/10 shrink-0 cursor-pointer uppercase' : 'px-4 py-2 bg-slate-100 text-slate-650 border border-slate-200 hover:bg-slate-200 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer uppercase'}">
+                    Semua
+                </button>
+            `;
+            
+            categoriesData.forEach(cat => {
+                const isActive = currentCategoryFilter == cat.id;
+                html += `
+                    <button onclick="filterCategory('${cat.id}')" id="cat-tab-${cat.id}"
+                            class="${isActive ? 'px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-indigo-600/10 shrink-0 cursor-pointer uppercase' : 'px-4 py-2 bg-slate-100 text-slate-650 border border-slate-200 hover:bg-slate-200 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer uppercase'}">
+                        ${cat.name}
+                    </button>
+                `;
+            });
+            
+            container.innerHTML = html;
         }
     </script>
     <!-- PWA Service Worker Registration -->
