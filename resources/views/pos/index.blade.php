@@ -480,14 +480,28 @@
                     </div>
 
                     <!-- QRIS PAYMENT SECTION (Hidden initially) -->
-                    <div id="payment-qris-view" class="space-y-4 hidden flex-col items-center text-center">
-                        <div class="p-2 bg-white border border-slate-200 rounded-2xl shadow-sm inline-block">
-                            <img id="qris-image-placeholder" src="/images/qris-bauntung.jpg" alt="QRIS Toko Sembako Plastik Bauntung" class="w-48 h-auto rounded-lg">
+                    <div id="payment-qris-view" class="hidden flex-col items-center text-center space-y-3">
+                        <!-- QR Code -->
+                        <div class="p-2 bg-white border-2 border-teal-200 rounded-2xl shadow-md inline-block relative">
+                            <img id="qris-image-placeholder" src="/images/qris-bauntung.jpg" alt="QRIS Toko Sembako Plastik Bauntung" class="w-44 h-auto rounded-xl">
                         </div>
-                        <div>
-                            <p class="font-bold text-slate-800 text-sm">QRIS DINAMIS BAUNTUNG</p>
-                            <p class="text-xs text-slate-500 mt-1 max-w-[280px]">Silakan arahkan pembeli untuk men-scan QR di atas. Nominal harga akan otomatis terdeteksi.</p>
+
+                        <!-- Amount to Pay -->
+                        <div class="bg-teal-50 border border-teal-200 rounded-xl px-5 py-2.5 w-full">
+                            <p class="text-[10px] font-bold text-teal-500 uppercase tracking-widest mb-0.5">Total yang Harus Dibayar</p>
+                            <p id="qris-total-display" class="text-2xl font-extrabold text-teal-700">Rp 0</p>
                         </div>
+
+                        <!-- Waiting Status with Pulse Animation -->
+                        <div id="qris-waiting-status" class="flex items-center space-x-2 bg-amber-50 border border-amber-200 rounded-xl px-4 py-2.5 w-full">
+                            <span class="relative flex h-3 w-3 shrink-0">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+                            </span>
+                            <span class="text-xs font-bold text-amber-700">Menunggu Pembayaran dari Pembeli...</span>
+                        </div>
+
+                        <p class="text-[10px] text-slate-400">Tunjukkan QR di atas kepada pembeli untuk di-scan</p>
                     </div>
                     
                 </div>
@@ -495,23 +509,41 @@
  
             <!-- Modal Footer -->
             <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3 shrink-0">
-                <div class="flex items-center justify-end">
-                    <label class="flex items-center space-x-2 cursor-pointer text-slate-600 font-bold text-xs uppercase tracking-wide bg-indigo-50 px-3 py-1.5 rounded-lg border border-indigo-100">
-                        <input type="checkbox" id="auto-print-checkbox" class="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" checked>
-                        <span>Langsung Cetak Struk Setelah Pembayaran Berhasil</span>
-                    </label>
+                <!-- Footer: CASH MODE -->
+                <div id="footer-cash-mode">
+                    <div class="flex items-center justify-end mb-3">
+                        <label class="flex items-center space-x-2 cursor-pointer text-slate-600 font-bold text-xs uppercase tracking-wide bg-indigo-50 px-3 py-1.5 rounded-lg border border-indigo-100">
+                            <input type="checkbox" id="auto-print-checkbox" class="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" checked>
+                            <span>Langsung Cetak Struk Setelah Bayar</span>
+                        </label>
+                    </div>
+                    <div class="flex space-x-3 w-full">
+                        <button type="button" onclick="closePaymentModal()"
+                                class="flex-1 py-3.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-2xl text-sm transition-all cursor-pointer text-center">
+                            Batal
+                        </button>
+                        <button type="button" onclick="submitTransaction()" id="btn-submit-trans" disabled
+                                class="flex-1 py-3.5 px-4 bg-slate-300 text-slate-500 font-bold rounded-2xl text-sm transition-all shadow-md text-center flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Selesaikan Transaksi</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="flex space-x-3 w-full">
-                    <button type="button" onclick="closePaymentModal()"
-                            class="flex-1 py-3.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-2xl text-sm transition-all cursor-pointer text-center">
-                        Batal
-                    </button>
-                    <button type="button" onclick="submitTransaction()" id="btn-submit-trans" disabled
-                            class="flex-1 py-3.5 px-4 bg-slate-300 text-slate-500 font-bold rounded-2xl text-sm transition-all shadow-md text-center flex items-center justify-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+
+                <!-- Footer: QRIS MODE -->
+                <div id="footer-qris-mode" class="hidden flex-col space-y-2">
+                    <button type="button" onclick="confirmQrisPayment()"
+                            class="w-full py-4 px-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold rounded-2xl text-sm transition-all shadow-lg shadow-emerald-500/30 active:scale-95 flex items-center justify-center space-x-2.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
-                        <span>Selesaikan Transaksi</span>
+                        <span class="text-base">Konfirmasi Pembayaran Diterima</span>
+                    </button>
+                    <button type="button" onclick="closePaymentModal()"
+                            class="w-full py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-500 font-bold rounded-xl text-xs transition-all cursor-pointer text-center">
+                        Batal / Kembali
                     </button>
                 </div>
             </div>
@@ -530,7 +562,7 @@
                 </div>
                 <h2 class="text-xl font-bold text-white tracking-tight">Pembayaran Sukses!</h2>
                 <p id="success-modal-amount-paid" class="text-white text-base font-extrabold mt-2 bg-emerald-600/35 px-4 py-1.5 rounded-full border border-emerald-400/30 inline-block">Rp 0</p>
-                <p class="text-emerald-100 text-[10px] opacity-75 mt-0.5">Transaksi telah tersimpan</p>
+                <p id="success-modal-method-label" class="text-emerald-100 text-[10px] opacity-80 mt-0.5 font-semibold">Transaksi telah tersimpan</p>
             </div>
             
             <!-- Receipt Preview Area -->
@@ -935,18 +967,21 @@
 
             document.getElementById('pay-grand-total').innerText = `Rp ${numberFormat(total)}`;
             document.getElementById('input-cash-amount').value = total; // Default to exact amount
-            
+
+            // Update QRIS total display
+            document.getElementById('qris-total-display').innerText = `Rp ${numberFormat(total)}`;
+
             // Setup Quick Cash Buttons
             setupQuickCashButtons(total);
 
             // Trigger change calculation
             calculateChange();
-            
+
             // Generate dynamic QRIS with exact amount
             updateQRISImage(total);
-            
+
             modal.style.display = 'flex';
-            
+
             // Check internet for QRIS
             if (!navigator.onLine) {
                 selectPaymentMethod('cash'); // Force cash when offline
@@ -967,29 +1002,127 @@
             selectedPaymentMethod = method;
             const btnCash = document.getElementById('btn-pay-cash');
             const btnQris = document.getElementById('btn-pay-qris');
-            
-            const cashView = document.getElementById('payment-cash-view');
-            const qrisView = document.getElementById('payment-qris-view');
-            
-            const btnSubmit = document.getElementById('btn-submit-trans');
+
+            const cashView   = document.getElementById('payment-cash-view');
+            const qrisView   = document.getElementById('payment-qris-view');
+            const footerCash = document.getElementById('footer-cash-mode');
+            const footerQris = document.getElementById('footer-qris-mode');
+
             if (method === 'cash') {
                 btnCash.className = "py-4 px-4 bg-indigo-50 border-2 border-indigo-600 text-indigo-700 rounded-2xl font-bold flex flex-col items-center justify-center space-y-2 cursor-pointer transition-all";
                 btnQris.className = "py-4 px-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold flex flex-col items-center justify-center space-y-2 cursor-pointer transition-all hover:bg-slate-50";
-                
+
                 cashView.classList.remove('hidden');
                 qrisView.classList.add('hidden');
+
+                // Show cash footer, hide QRIS footer
+                footerCash.classList.remove('hidden');
+                footerQris.classList.add('hidden');
+                footerQris.classList.remove('flex');
+
                 calculateChange();
             } else {
-                btnQris.className = "py-4 px-4 bg-indigo-50 border-2 border-indigo-600 text-indigo-700 rounded-2xl font-bold flex flex-col items-center justify-center space-y-2 cursor-pointer transition-all";
+                btnQris.className = "py-4 px-4 bg-teal-50 border-2 border-teal-500 text-teal-700 rounded-2xl font-bold flex flex-col items-center justify-center space-y-2 cursor-pointer transition-all";
                 btnCash.className = "py-4 px-4 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold flex flex-col items-center justify-center space-y-2 cursor-pointer transition-all hover:bg-slate-50";
-                
+
                 qrisView.classList.remove('hidden');
+                qrisView.classList.add('flex');
                 cashView.classList.add('hidden');
-                
-                // QRIS matches total automatically and is always valid
-                btnSubmit.disabled = false;
-                btnSubmit.className = "flex-1 py-3.5 px-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold rounded-2xl text-sm transition-all shadow-lg active:scale-95 cursor-pointer text-center flex items-center justify-center space-x-2";
+
+                // Show QRIS footer, hide cash footer
+                footerQris.classList.remove('hidden');
+                footerQris.classList.add('flex');
+                footerCash.classList.add('hidden');
             }
+        }
+
+        // QRIS: Kasir konfirmasi pembayaran sudah diterima
+        function confirmQrisPayment() {
+            const total = calculateGrandTotal();
+
+            // Show processing state on button
+            const confirmBtn = document.querySelector('#footer-qris-mode button:first-child');
+            if (confirmBtn) {
+                confirmBtn.disabled = true;
+                confirmBtn.innerHTML = `
+                    <svg class="animate-spin w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                    </svg>
+                    <span>Memproses...</span>`;
+            }
+
+            // Build payload for QRIS (amount_paid = grand_total, change = 0)
+            let subtotal = 0;
+            cart.forEach(item => { subtotal += (item.sell_price - item.discount) * item.qty; });
+
+            const payload = {
+                cart: cart,
+                subtotal: subtotal,
+                discount: transactionDiscount,
+                grand_total: total,
+                payment_method: 'qris',
+                amount_paid: total,
+                change_due: 0
+            };
+
+            fetch('{{ route("pos.transaction.store") }}', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrfToken },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    closePaymentModal();
+
+                    // Show receipt in printer console
+                    showReceiptInPrinterConsole(data.receipt);
+
+                    // Adjust local stocks
+                    cart.forEach(item => {
+                        const localProd = productsData.find(p => p.id === item.id);
+                        if (localProd) localProd.stock -= item.qty;
+                    });
+
+                    // Reset cart
+                    cart = [];
+                    transactionDiscount = 0;
+                    updateCartUI();
+                    renderProducts();
+
+                    // Show success modal with QRIS label
+                    openSuccessModal(data.receipt, total, 'qris');
+
+                    // Auto print if checkbox checked
+                    if (document.getElementById('auto-print-checkbox') &&
+                        document.getElementById('auto-print-checkbox').checked) {
+                        setTimeout(() => printViaThermerModal(), 500);
+                    }
+                } else {
+                    // Restore button on error
+                    if (confirmBtn) {
+                        confirmBtn.disabled = false;
+                        confirmBtn.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="text-base">Konfirmasi Pembayaran Diterima</span>`;
+                    }
+                    alert('Gagal memproses transaksi QRIS: ' + data.message);
+                }
+            })
+            .catch(err => {
+                if (confirmBtn) {
+                    confirmBtn.disabled = false;
+                    confirmBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span class="text-base">Konfirmasi Pembayaran Diterima</span>`;
+                }
+                alert('Kesalahan koneksi. Pastikan internet aktif untuk pembayaran QRIS.');
+            });
         }
 
         function setupQuickCashButtons(total) {
@@ -1156,7 +1289,7 @@
                     renderProducts();
                     
                     // Show Success Modal
-                    openSuccessModal(data.receipt, payload.amount_paid);
+                    openSuccessModal(data.receipt, payload.amount_paid, payload.payment_method);
                     
                     if (document.getElementById('auto-print-checkbox').checked) {
                         setTimeout(() => printViaThermerModal(), 500);
@@ -1564,14 +1697,28 @@
     </script>
     <!-- PWA Service Worker Registration -->
     <script>
-        function openSuccessModal(receiptText, amountPaid) {
+        function openSuccessModal(receiptText, amountPaid, paymentMethod) {
             document.getElementById('success-receipt-preview').innerText = receiptText;
+
             if (amountPaid !== undefined && amountPaid !== null) {
                 document.getElementById('success-modal-amount-paid').innerText = "Total Bayar: Rp " + numberFormat(amountPaid);
                 document.getElementById('success-modal-amount-paid').style.display = 'inline-block';
             } else {
                 document.getElementById('success-modal-amount-paid').style.display = 'none';
             }
+
+            // Update method label in success modal
+            const methodLabel = document.getElementById('success-modal-method-label');
+            if (methodLabel) {
+                if (paymentMethod === 'qris') {
+                    methodLabel.innerHTML = '✅ Pembayaran QRIS Berhasil Dikonfirmasi';
+                } else if (paymentMethod === 'cash') {
+                    methodLabel.innerHTML = '✅ Pembayaran Tunai Berhasil';
+                } else {
+                    methodLabel.innerHTML = 'Transaksi telah tersimpan';
+                }
+            }
+
             document.getElementById('success-modal').style.display = 'flex';
         }
         function closeSuccessModal() {
